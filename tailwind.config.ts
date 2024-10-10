@@ -1,4 +1,6 @@
+import { text } from "stream/consumers";
 import type { Config } from "tailwindcss";
+
 
 const config: Config = {
     darkMode: ["class"],
@@ -9,6 +11,17 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+
+		keyframes: {
+			blink: {
+			  '0%, 50%': { opacity: '1' },
+			  '50%': { opacity: '0' },
+			},
+		  },
+		  animation: {
+			blink: 'blink 1s step-end infinite',
+		  },
+		
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -55,9 +68,17 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		
+		
   	}
+	
   },
   plugins: [require("tailwindcss-animate")],
 };
+
+
+
+
+
 export default config;

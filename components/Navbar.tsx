@@ -13,19 +13,32 @@ import {
 const Navbar:React.FC = () => {
 
   return (
-    <nav className=" bg-transparent sticky border-1 top-0 backdrop-blur">
+    <nav className="bg-transparent sticky border-1 top-0 backdrop-blur">
       <div className="container mx-auto px-4 ">
         <div className="flex justify-between items-center py-4">
-          <div className="text-black text-2xl font-bold">Ashar</div>
+          <div className="text-[#082240] text-2xl font-bold">Ashar</div>
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-black font-semibold  hover:text-black">Home</Link>
-            <Link href="/about" className="text-black font-semibold hover:text-black">About</Link>
-            <Link href="/projects" className="text-black font-semibold hover:text-black">Projects</Link>
-            <Link href="/contact" className="text-black font-semibold hover:text-black">Contact</Link>
+         <Link href="/" className="text-[#082240] font-semibold relative group">
+  Home
+  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
+</Link>
+<Link href="/about" className="text-[#082240] font-semibold relative group">
+  About
+  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
+</Link>
+<Link href="/projects" className="text-[#082240] font-semibold relative group">
+  Projects
+  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
+</Link>
+<Link href="/contact" className="text-[#082240] font-semibold relative group">
+  Contact
+  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
+</Link>
+            
           </div>
           <div className="md:hidden flex items-center">
           <Sheet>
-          <SheetTrigger>
+            <SheetTrigger>
             <button
               className="text-black hover:text-black focus:outline-none"
               id="menu-toggle"
@@ -63,7 +76,7 @@ const Navbar:React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu
       <div className="md:hidden">
 
       
@@ -72,7 +85,7 @@ const Navbar:React.FC = () => {
 
 
         
-      </div>
+      </div> */}
 
       
  

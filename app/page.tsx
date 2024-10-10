@@ -1,12 +1,43 @@
-import React from 'react'
+'use client'
 
-function page() {
+
+import { useEffect, useState } from 'react';
+import Image from 'next/image'; // Import Next.js Image component
+
+export default function IntroSection() {
+  const [text, setText] = useState('');
+  const typingText = "Hi there\nI am Ashar Khan\nMERN stack developer";
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < typingText.length) {
+      const timeout = setTimeout(() => {
+        setText(text + typingText[index]);
+        setIndex(index + 1);
+      }, 100); // Adjust typing speed
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text, typingText]);
+
   return (
-   <div className="text-white mt-5">
-   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio veniam ratione rerum ipsam cum deserunt, quas debitis possimus deleniti dolore nostrum. Vero aliquam consequuntur dolorem vitae corrupti modi, quidem itaque voluptates nam sit atque, officia alias sint ut suscipit, natus consequatur consectetur exercitationem? Esse dolorum iste quibusdam deleniti praesentium perspiciatis explicabo ipsum totam possimus. Eum, dolorem accusantium! Exercitationem libero pariatur omnis, architecto, eum doloribus, sequi voluptate quaerat laudantium dolor quia laborum obcaecati. Earum dicta quisquam, iure nihil ullam excepturi consequuntur dignissimos sequi necessitatibus? Doloribus nesciunt deleniti animi voluptatem. Quasi nihil, enim fugiat voluptatum minima veniam perferendis corporis repellat autem ratione ipsum aliquid, amet animi saepe. Similique consequatur ratione magni autem? Praesentium eligendi necessitatibus optio, officia vero odit repellat sunt saepe nihil officiis beatae dignissimos error veritatis exercitationem asperiores a voluptas est in consectetur minima molestiae quo porro modi harum! Earum fugiat minima iusto maxime, expedita itaque nulla quo facere dignissimos vero, soluta molestias numquam iure ipsa quae in minus saepe tempora voluptates doloribus voluptatem, nesciunt fuga animi excepturi. Consequatur doloremque, dolore saepe laborum officia corporis magni, atque porro asperiores, eveniet ipsam distinctio amet? Iure esse magni, unde vero et repudiandae ut labore. Recusandae ad, laudantium doloremque quibusdam, cum inventore nobis, nesciunt obcaecati deleniti optio neque repellendus accusamus! Dolorum placeat sapiente expedita. Reprehenderit, a architecto beatae molestiae asperiores nulla consequuntur praesentium velit maiores fuga qui aut quasi nam. Consequuntur labore maxime quam magni alias assumenda, veritatis repellat debitis cum ratione sequi iste similique, doloribus ex. Fuga incidunt architecto error inventore blanditiis, libero amet quidem consequuntur! Optio quasi commodi id impedit accusantium fuga, sed quidem natus placeat laboriosam et quisquam maiores excepturi dolorem exercitationem aliquam nemo vitae incidunt neque molestias repellat accusamus inventore velit tempore! Fugit temporibus neque unde! Dignissimos sunt repellendus ab tempore cum ratione excepturi tempora, non, odit velit architecto maiores aut mollitia odio fuga ducimus nostrum amet modi esse iure porro illum libero vel laudantium! Vel illum facilis eius temporibus nam impedit, error harum fugit doloremque praesentium consequuntur blanditiis et, deleniti ut exercitationem. Omnis, molestiae? Maiores, ducimus voluptatibus adipisci fugiat rerum suscipit minus veritatis dolorum blanditiis veniam sit et excepturi voluptate odit quidem soluta ex consequuntur laboriosam iste quo cum! Quod deleniti dolor eius, in itaque modi! Ex beatae molestiae saepe reiciendis veniam fugit animi, magni, molestias voluptatem laudantium illo itaque odit veritatis voluptate, eos dolorem nesciunt incidunt mollitia! Harum quis, corporis mollitia ducimus omnis corrupti possimus sed laboriosam inventore explicabo temporibus magni dolorum eos delectus sequi error nulla! Officia atque saepe cupiditate recusandae! Dicta sed laborum vero illum fuga, sunt ratione qui voluptatem! Quo commodi asperiores dignissimos quos vitae accusantium voluptate ullam placeat rerum sunt maxime, tempore, rem perferendis nostrum sequi animi error atque ad aperiam non quis nulla cumque. Veritatis vero doloribus minima ea deserunt libero tempore reiciendis dicta. Dolore enim officiis laudantium et aliquid dolorum consectetur illum nesciunt, corrupti voluptates veritatis molestias neque eum facilis laboriosam atque natus, harum tenetur. Ea voluptatem veniam ratione amet modi dignissimos aut quas possimus delectus quos suscipit animi, architecto adipisci similique porro. Nostrum eaque eveniet sit inventore, similique unde ex officiis voluptatum rerum libero. Aliquid accusantium voluptas eius sint. Rerum omnis, sapiente quam ad impedit unde tenetur optio ipsam nesciunt et cupiditate dignissimos? Distinctio blanditiis modi nulla. Quibusdam quisquam dolorem eveniet sapiente unde nam enim, qui repellendus ut? Nulla voluptatum eius quis quaerat saepe laborum et, laudantium est ab repudiandae dicta quas? Necessitatibus praesentium aliquam eum nulla laboriosam repudiandae ipsa obcaecati eius quasi, ex incidunt reprehenderit, quo mollitia laborum quos debitis? Animi voluptatibus ea consectetur debitis qui alias error eum cupiditate. Minima hic tenetur sint fuga dignissimos commodi nisi, error excepturi vitae rem. Sequi hic alias sunt tempora aperiam, quas ex, vero rerum veritatis molestiae accusamus atque accusantium illo dignissimos iusto velit consequuntur facere corrupti, rem repellendus exercitationem sapiente! Incidunt, fugiat? Ab nam molestias laudantium distinctio temporibus voluptatibus, molestiae ea ullam doloribus fuga et, omnis non, voluptates facilis repellendus. Quae temporibus repellendus repellat laborum dignissimos cumque laboriosam, vero explicabo praesentium at nam optio impedit! Aliquid officiis obcaecati optio iure quibusdam facere delectus, culpa temporibus, at sequi recusandae dignissimos debitis ex hic accusantium sapiente soluta a corporis quis? Maiores tempora blanditiis totam reiciendis, rerum expedita architecto eligendi, ipsum quaerat quo eum, excepturi aut adipisci veniam voluptates nesciunt laboriosam illo cumque sed quia cum mollitia? Modi, delectus. Eos voluptatem excepturi maxime. At vel blanditiis, voluptates provident pariatur, deserunt ducimus hic vitae dolorem ea quibusdam earum possimus necessitatibus! Veritatis temporibus sequi sapiente ea accusamus soluta omnis assumenda velit culpa quidem animi architecto, deleniti magni rem iure ex reprehenderit voluptatibus obcaecati inventore quos? Libero perspiciatis nemo quisquam tempore nostrum ullam reiciendis inventore iste, temporibus recusandae distinctio corrupti dolorem error ratione commodi maiores similique asperiores saepe eveniet eos quod eaque! Iure praesentium omnis voluptatum voluptates quasi ipsum saepe sit, ducimus sequi accusantium nobis necessitatibus? Illo, temporibus dolores fugiat sit repudiandae eius? Nulla numquam repellendus perferendis perspiciatis, porro quis voluptatibus? Dolore natus quibusdam error maiores ut accusantium. Optio recusandae omnis officiis eveniet praesentium eius dolore, facilis est mollitia, error a itaque. Ab a aliquam sint consectetur voluptas corporis, quidem dolores eum eveniet tempora fuga libero sequi esse ut distinctio quod vero recusandae inventore, blanditiis odit accusamus et quos quaerat natus. Quam doloribus cumque suscipit esse quo vitae, perspiciatis laudantium alias? Quasi nihil, eveniet eius ducimus quidem voluptatem accusantium numquam ratione maiores neque natus facere nisi tenetur dicta, consequatur aperiam temporibus enim quibusdam similique voluptatum in culpa maxime architecto perferendis. Ab accusamus similique quisquam porro eius cupiditate praesentium magnam rem harum delectus quae temporibus sint sit nemo quas corrupti rerum eos, fugit consectetur ipsam a minima dolorum voluptatibus deleniti. Dolore at consectetur corporis omnis cum amet tenetur delectus saepe odit in, quos necessitatibus eveniet consequatur asperiores eaque optio quia neque ut commodi rem ducimus dolor dolorum ipsam. Natus molestiae aliquam facere libero minus expedita. Natus non, et error ab consequuntur laudantium suscipit maxime laborum esse, aspernatur odit magni aliquam possimus unde recusandae rem atque veniam. Sint nemo laboriosam ipsam enim. Soluta totam amet exercitationem quas deleniti.
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between p-6 md:py-12 px-8 md:px-16 bg-gradient-to-r from-blue-400 via-purple-500 to-yellow-400 text-white min-h-screen">
+      {/* Text Section */}
+      <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+        <h1 className="text-4xl font-bold leading-tight whitespace-pre-line">
+          {text}
+        </h1>
+      </div>
 
-   </div>
-  )
+      {/* Image Section */}
+      <div className="md:w-1/2 flex justify-center md:justify-end">
+        <Image
+          src={'/app/assets/website.avif'} // Ensure your image path is correct
+          width={300}
+          height={300}
+          alt="Ashar Khan"
+          
+        />
+      </div>
+    </div>
+  );
 }
-
-export default page
