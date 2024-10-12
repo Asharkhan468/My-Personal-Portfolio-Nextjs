@@ -13,7 +13,7 @@ import {
 const Navbar:React.FC = () => {
 
   return (
-    <nav className="bg-transparent sticky border-1 top-0 backdrop-blur">
+    <nav className="bg-transparent sticky border-1 top-0 backdrop-blur z-10">
       <div className="container mx-auto px-4 ">
         <div className="flex justify-between items-center py-4">
           <div className="text-[#082240] text-2xl font-bold">Ashar</div>

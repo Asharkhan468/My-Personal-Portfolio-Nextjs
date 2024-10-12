@@ -6,6 +6,7 @@ import developer from '../public/developer.png'
 import guyAvatar from '../public/avatar.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 
 
@@ -75,8 +76,8 @@ const TypingEffectSection = () => {
       {/* Social Icons */}
       <div className="flex justify-center space-x-4">
       {/* GitHub */}
-      <a
-        href="https://github.com/yourusername"
+      <Link
+        href="https://github.com/Asharkhan468"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
@@ -86,11 +87,11 @@ const TypingEffectSection = () => {
           className="w-8 h-8 text-gray-800 transition-all duration-300 ease-in-out"
         />
         <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-gray-800"></span>
-      </a>
+      </Link>
 
       {/* LinkedIn */}
-      <a
-        href="https://linkedin.com/in/yourusername"
+      <Link
+        href="https://www.linkedin.com/in/ashar-khan-b250a92a9/"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
@@ -100,25 +101,12 @@ const TypingEffectSection = () => {
           className="w-8 h-8 text-gray-800 transition-all duration-300 ease-in-out group-hover:text-blue-600"
         />
         <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-blue-600"></span>
-      </a>
+      </Link>
 
-      {/* Twitter */}
-      <a
-        href="https://twitter.com/yourusername"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
-      >
-        <FontAwesomeIcon
-          icon={faTwitter}
-          className="w-8 h-8 text-gray-800 transition-all duration-300 ease-in-out group-hover:text-blue-500"
-        />
-        <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-blue-400"></span>
-      </a>
 
       {/* Instagram */}
-      <a
-        href="https://instagram.com/yourusername"
+      <Link
+        href="https://www.instagram.com/developer_ashar_123/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fedit%2F%3F__coig_login%3D1"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
@@ -128,7 +116,7 @@ const TypingEffectSection = () => {
           className="w-8 h-8 text-gray-800 transition-all duration-300 ease-in-out group-hover:text-pink-500"
         />
         <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-pink-500"></span>
-      </a>
+      </Link>
     </div>
     </div>
 </>
