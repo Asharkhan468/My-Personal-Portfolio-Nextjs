@@ -2,10 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import developer from '../public/developer.png'
+import developer from '../public/developer.gif'
 import guyAvatar from '../public/avatar.webp'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faInstagram  } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; 
 import Link from 'next/link';
 
 
@@ -22,7 +23,7 @@ const TypingEffectSection = () => {
     <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-800 mb-4">
       I am <span className='text-[#b5179e]'>Ashar Khan</span>
     </h2>
-    <h3 className="text-xl md:text-2xl lg:text-3xl text-[#0081a7] font-semibold">
+    <h3 className="text-xl md:text-2xl lg:text-3xl text-blue-600 font-semibold">
       <div className="relative">
         <span className="inline-block whitespace-nowrap overflow-hidden border-r-2 border-black animate-typing pr-2">
           MERN Stack Developer
@@ -41,7 +42,7 @@ const TypingEffectSection = () => {
 <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 bg-gray-100 min-h-screen">
   <div className="flex-1 mb-8 md:mb-0 px-4 md:px-8">
     <h1 className="text-3xl text-center md:text-5xl font-bold text-gray-800 mb-4">
-      Let me <span className='text-[#0081a7]'>introduce</span> myself
+      Let me <span className='text-blue-600'>introduce</span> myself
     </h1>
     <p className="text-lg md:text-xl text-gray-600 mt-9">
       <span>
@@ -70,7 +71,7 @@ const TypingEffectSection = () => {
 <div className="flex flex-col items-center py-12 px-6 sm:px-8 bg-transparent text-gray-900">
       {/* Header Text */}
       <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-8 sm:mb-10 text-center text-gray-900 tracking-wide transition-all duration-300 ease-in-out ">
-  Find <span className='text-[#b5179e]'>me</span> on
+  Find <span className='text-blue-600'>me</span> on
 </h2>
 
       {/* Social Icons */}
@@ -117,6 +118,18 @@ const TypingEffectSection = () => {
         />
         <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-pink-500"></span>
       </Link>
+      <Link
+      href="mailto:asharullah.khan2468@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out"
+    >
+      <FontAwesomeIcon
+        icon={faEnvelope} 
+        className="w-8 h-8 text-gray-800 transition-all duration-300 ease-in-out group-hover:text-blue-500"
+      />
+      <span className="absolute inset-0 border-2 border-transparent rounded-full transition-all duration-300 ease-in-out group-hover:border-blue-500"></span>
+    </Link>
     </div>
     </div>
 </>
