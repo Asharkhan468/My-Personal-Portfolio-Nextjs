@@ -26,7 +26,7 @@ const TypingEffectSection = () => {
     <h3 className="text-xl md:text-2xl lg:text-3xl text-blue-600 font-semibold">
       <div className="relative">
         <span className="inline-block whitespace-nowrap overflow-hidden border-r-2 border-black animate-typing pr-2">
-          MERN Stack Developer
+          Web Application Developer
         </span>
       </div>
     </h3>

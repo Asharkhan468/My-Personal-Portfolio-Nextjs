@@ -34,7 +34,7 @@ function page() {
         Who I Am
       </h2>
       <p className="text-lg text-gray-600 leading-relaxed mt-8">
-        Hi, I’m <span className="font-semibold text-blue-600">Ashar Khan</span>, a passionate <span className='text-blue-600 font-semibold'>MERN stack developer</span> with experience in building dynamic web applications. I enjoy creating seamless digital experiences and solving complex problems through code.
+        Hi, I’m <span className="font-semibold text-blue-600">Ashar Khan</span>, a passionate <span className='text-blue-600 font-semibold'>Web Application Developer</span> with experience in building dynamic web applications. I enjoy creating seamless digital experiences and solving complex problems through code.
       </p><br />
       <p className='text-lg text-gray-600 leading-relaxed'> My goal is to deliver professional, high-quality solutions that meet the needs of my clients.</p>
       <p className="mt-4 text-lg text-gray-600 leading-relaxed">

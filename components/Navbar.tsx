@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Sheet,
@@ -15,6 +15,13 @@ import {
 
 
 const Navbar:React.FC = () => {
+
+  let [sideBar , setSideBar] = useState(false)
+
+  const closeSidebar = () => {
+    setSideBar(true)
+ 
+  };
   return (
 
 
@@ -41,37 +48,30 @@ const Navbar:React.FC = () => {
         </Link>
       </div>
       <div className="md:hidden flex items-center">
-        <Sheet>
-          <SheetTrigger>
-            <div className="text-black hover:text-black focus:outline-none" id="menu-toggle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </div>
-          </SheetTrigger>
-
-          <SheetContent>
-            <SheetHeader>
-              <SheetTitle className='text-2xl font-bold'>Ashar</SheetTitle>
-              <SheetDescription>
-                <div id="menu" className='mt-4'>
-                  <Link href="/" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white">Home</Link>
-                  <Link href="/about" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white">About</Link>
-                  <Link href="/projects" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white">Projects</Link>
-                  <Link href="/contact" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white">Contact</Link>
-                </div>
-              </SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+  <Sheet>
+    <SheetTrigger>
+      <div className="text-black hover:text-black focus:outline-none" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
       </div>
+    </SheetTrigger>
+
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle className='text-2xl font-bold'>Ashar</SheetTitle>
+        <SheetDescription>
+          <div id="menu" className='mt-4'>
+            <Link href="/" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Home</Link>
+            <Link href="/about" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>About</Link>
+            <Link href="/projects" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Projects</Link>
+            <Link href="/contact" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Contact</Link>
+          </div>
+        </SheetDescription>
+      </SheetHeader>
+    </SheetContent>
+  </Sheet>
+</div>
     </div>
   </div>
 </nav> 
