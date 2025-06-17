@@ -12,16 +12,17 @@ function page() {
     { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" />, color: "text-blue-500" },
     { name: "JavaScript", icon: <FaJs className="text-yellow-500" />, color: "text-yellow-500" },
     { name: "React", icon: <FaReact className="text-cyan-500" />, color: "text-cyan-500" },
+    { name: "React Native", icon: <FaReact className="text-cyan-500" />, color: "text-cyan-500" },
     { name: "Next.js", icon: <SiNextdotjs className="text-gray-700" />, color: "text-gray-700" },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500" />, color: "text-teal-500" },
-    { name: "Node.js", icon: <FaNode className="text-green-600" />, color: "text-green-600" },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-800" />, color: "text-green-800" },
+    // { name: "Node.js", icon: <FaNode className="text-green-600" />, color: "text-green-600" },
+    // { name: "MongoDB", icon: <SiMongodb className="text-green-800" />, color: "text-green-800" },
     { name: "Redux", icon: <SiRedux className="text-purple-500" />, color: "text-purple-500" },
     { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, color: "text-blue-600" },
     { name: "Git", icon: <FaGitAlt className="text-red-500" />, color: "text-red-500" },
     { name: "Firebase", icon: <SiFirebase className="text-yellow-600" />, color: "text-yellow-600" },
     { name: "Bootstrap", icon: <SiBootstrap className="text-indigo-500" />, color: "text-indigo-500" },
-    { name: "Express.js", icon: <SiExpress className="text-black" />, color: "text-black" },
+    // { name: "Express.js", icon: <SiExpress className="text-black" />, color: "text-black" },
   ];
 
   return (
@@ -34,11 +35,11 @@ function page() {
         Who I Am
       </h2>
       <p className="text-lg text-gray-600 leading-relaxed mt-8">
-        Hi, I’m <span className="font-semibold text-blue-600">Ashar Khan</span>, a passionate <span className='text-blue-600 font-semibold'>Web Application Developer</span> with experience in building dynamic web applications. I enjoy creating seamless digital experiences and solving complex problems through code.
+        Hi, I’m <span className="font-semibold text-blue-600">Ashar Khan</span>, a passionate <span className='text-blue-600 font-semibold'>Mobile Application Developer</span> with experience in building dynamic web and mobile applications. I enjoy creating seamless digital experiences and solving complex problems through code.
       </p><br />
       <p className='text-lg text-gray-600 leading-relaxed'> My goal is to deliver professional, high-quality solutions that meet the needs of my clients.</p>
       <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-        Whether it's a mobile app or a full-fledged website, I’m here to help you bring your ideas to life with my expertise in modern web technologies and design principles.
+        Whether it's a mobile app or a full-fledged website, I’m here to help you bring your ideas to life with my expertise in modern web and mobile technologies and design principles.
       </p>
     </div>
 

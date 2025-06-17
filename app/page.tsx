@@ -26,7 +26,7 @@ const TypingEffectSection = () => {
     <h3 className="text-xl md:text-2xl lg:text-3xl text-blue-600 font-semibold">
       <div className="relative">
         <span className="inline-block whitespace-nowrap overflow-hidden border-r-2 border-black animate-typing pr-2">
-          Web Application Developer
+          Mobile Application Developer
         </span>
       </div>
     </h3>
@@ -51,11 +51,11 @@ const TypingEffectSection = () => {
 
       </span><br /><br />
   
-<span>I’m well-versed in popular technologies like <span className='text-[#b5179e]'>JavaScript,</span> <span className='text-[#b5179e]'>React.js,</span> and <span className='text-[#b5179e]'>Next js.</span></span><br /><br />
+<span>I’m well-versed in popular technologies like <span className='text-[#b5179e]'>JavaScript,</span> <span className='text-[#b5179e]'>React.js, React Native</span> and <span className='text-[#b5179e]'>Next js.</span></span><br /><br />
 
-<span>I have a strong passion for creating <span className='text-[#b5179e]'>innovative web solutions </span>and <span className='text-[#b5179e]'>enhancing user experiences.</span> I'm eager to explore <span className='text-[#b5179e]'>emerging technologies</span> and am particularly drawn to areas where I believe the <span className='text-[#b5179e]'>future of development lies</span></span><br /><br />
+<span>I have a strong passion for creating <span className='text-[#b5179e]'>innovative Web and Mobile Application development solutions </span>and <span className='text-[#b5179e]'>enhancing user experiences.</span> I'm eager to explore <span className='text-[#b5179e]'>emerging technologies</span> and am particularly drawn to areas where I believe the <span className='text-[#b5179e]'>future of development lies</span></span><br /><br />
 
-<span>In my free time, I enjoy working on projects using <span className='text-[#b5179e]'> modern JavaScript frameworks and libraries</span> such as <span className='text-[#b5179e]'>React.js</span> to bring ideas to life.</span>
+<span>In my free time, I enjoy working on projects using <span className='text-[#b5179e]'> modern JavaScript frameworks and libraries</span> such as <span className='text-[#b5179e]'>React.js , React Native</span> to bring ideas to life.</span>
     </p>
   </div>
   <div className="flex-1 justify-center items-center md:ml-12 lg:ml-16 ml-10">

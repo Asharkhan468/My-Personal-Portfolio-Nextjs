@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { FaHome, FaUser, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import {
   Sheet,
   SheetContent,
@@ -9,104 +10,81 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 
+const navItems = [
+  { label: 'Home', href: '/', icon: <FaHome className="mr-2" /> },
+  { label: 'About', href: '/about', icon: <FaUser className="mr-2" /> },
+  { label: 'Projects', href: '/projects', icon: <FaProjectDiagram className="mr-2" /> },
+  { label: 'Contact', href: '/contact', icon: <FaEnvelope className="mr-2" /> },
+];
 
+const Navbar: React.FC = () => {
+  const [open, setOpen] = useState(false);
 
-
-const Navbar:React.FC = () => {
-
-  let [sideBar , setSideBar] = useState(false)
-
-  const closeSidebar = () => {
-    setSideBar(true)
- 
+  const handleLinkClick = () => {
+    setOpen(false); // Close sidebar on link click
   };
+
   return (
-
-
- <nav className="bg-transparent sticky border-1 top-0 backdrop-blur z-10">
-  <div className="container mx-auto px-4">
-    <div className="flex justify-between items-center py-4">
-      <div className="text-[#082240] text-2xl font-bold">Ashar</div>
-      <div className="hidden md:flex space-x-8">
-        <Link href="/" className="text-[#082240] font-semibold relative group">
-          Home
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
-        </Link>
-        <Link href="/about" className="text-[#082240] font-semibold relative group">
-          About
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
-        </Link>
-        <Link href="/projects" className="text-[#082240] font-semibold relative group">
-          Projects
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
-        </Link>
-        <Link href="/contact" className="text-[#082240] font-semibold relative group">
-          Contact
-          <span className="absolute left-0 bottom-0 w-full h-0.5 bg-black transition-transform duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100"></span>
-        </Link>
-      </div>
-      <div className="md:hidden flex items-center">
-  <Sheet>
-    <SheetTrigger>
-      <div className="text-black hover:text-black focus:outline-none" id="menu-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </div>
-    </SheetTrigger>
-
-    <SheetContent>
-      <SheetHeader>
-        <SheetTitle className='text-2xl font-bold'>Ashar</SheetTitle>
-        <SheetDescription>
-          <div id="menu" className='mt-4'>
-            <Link href="/" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Home</Link>
-            <Link href="/about" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>About</Link>
-            <Link href="/projects" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Projects</Link>
-            <Link href="/contact" className="block px-4 py-2 text-black-300 hover:bg-gray-900 hover:text-white" onClick={closeSidebar}>Contact</Link>
+    <nav className="sticky top-0 z-50 backdrop-blur bg-white/70 shadow-sm border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <div className="text-3xl font-extrabold text-[#082240] hover:text-[#b5179e] transition-colors duration-300 cursor-pointer">
+            Ashar
           </div>
-        </SheetDescription>
-      </SheetHeader>
-    </SheetContent>
-  </Sheet>
-</div>
-    </div>
-  </div>
-</nav> 
 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8">
+            {navItems.map(({ label, href, icon }) => (
+              <Link
+                key={label}
+                href={href}
+                className="flex items-center text-[#082240] font-medium text-lg relative group transition-colors duration-300"
+              >
+                {icon}
+                {label}
+                <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#b5179e] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </Link>
+            ))}
+          </div>
 
+          {/* Mobile Sidebar Trigger */}
+          <div className="md:hidden">
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger className="text-black hover:text-[#b5179e] focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round"
+                    d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              </SheetTrigger>
 
-
-
-
-
-
-
-
-
-
-
-
-  
+              <SheetContent side="left" className="w-64">
+                <SheetHeader>
+                  <SheetTitle className="text-2xl font-bold text-[#082240]">Ashar</SheetTitle>
+                  <SheetDescription className="mt-4 space-y-2">
+                    {navItems.map(({ label, href, icon }) => (
+                      <Link
+                        key={label}
+                        href={href}
+                        onClick={handleLinkClick}
+                        className="flex items-center px-4 py-2 rounded-md text-[#082240] hover:bg-blue-600 hover:text-white transition duration-200"
+                      >
+                        {icon}
+                        {label}
+                      </Link>
+                    ))}
+                  </SheetDescription>
+                </SheetHeader>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

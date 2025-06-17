@@ -12,6 +12,8 @@ import noonWeb from "../../public/noon-website.png"
 import passwordGenerator from '../../public/password-generator.png'
 import currencyConverter from '../../public/currency-converter.png'
 import saltAndPepper from '../../public/salt-and-peper.png'
+import ExpenseTracker from '../../public/Expense Tracker SS.jpg'
+import job2do from '../../public/MYJOB2DO SS.jpg'
 
 
 
@@ -86,59 +88,136 @@ const projects = [
   // Add more projects as needed
 ];
 
+
+// Add below the 'projects' array
+const mobileProjects = [
+  {
+    title: "MYJOB2Do – Service Marketplace App",
+    description: "A mobile app where users and service providers can post and sell services, featuring secure chat and Stripe payment integration. Built with React Native and Firebase.",
+    github: "#",
+    liveDemo: "https://drive.google.com/file/d/1ZSVUR2RT0tWykZAqXYdYO00tkMrrEYhX/view?usp=drive_link", 
+    image:job2do,
+  },
+  {
+    title: "Expense Tracker – React Native App",
+    description: "A simple and intuitive mobile app to manage personal expenses with categorization and charts. Built with React Native and local state management.",
+    github: "https://github.com/Asharkhan468/Expense",
+    liveDemo: "https://drive.google.com/file/d/1AWV3GmRb2YnNOiPgO8TwxNcQaAR6TM-C/view?usp=drive_link",  
+    image:ExpenseTracker
+  },
+];
+
+
 const ProjectPage = () => {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          My Recent <span className='text-blue-600'>Projects</span>
-        </h2>
+  <div className="container mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+      My Recent <span className='text-blue-600'>Projects</span>
+    </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-transform mt-5"
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 object-cover"
-                width={400} height={400}
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  {project.title}
-                </h3>
-                <p className="text-md font-semibold text-gray-800 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white bg-gray-800 px-4 py-2 rounded-md inline-flex items-center hover:bg-gray-900 transition"
-                  >
-                    <FaGithub className="mr-2" />
-                    GitHub
-                  </Link>
-                  <Link
-                    href={project.liveDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white bg-blue-600 px-4 py-2 rounded-md inline-flex items-center hover:bg-blue-700 transition"
-                  >
-                    <FiExternalLink className="mr-2" />
-                    Live Demo
-                  </Link>
-                </div>
-              </div>
+    {/* Web Projects Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-transform mt-5"
+        >
+          <Image
+            src={project.image}
+            alt={project.title}
+            className="w-full h-64 object-cover"
+            width={400}
+            height={400}
+          />
+          <div className="p-6">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              {project.title}
+            </h3>
+            <p className="text-md font-semibold text-gray-800 mb-4">
+              {project.description}
+            </p>
+            <div className="flex justify-between items-center">
+              <Link
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white bg-gray-800 px-4 py-2 rounded-md inline-flex items-center hover:bg-gray-900 transition"
+              >
+                <FaGithub className="mr-2" />
+                GitHub
+              </Link>
+              <Link
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white bg-blue-600 px-4 py-2 rounded-md inline-flex items-center hover:bg-blue-700 transition"
+              >
+                <FiExternalLink className="mr-2" />
+                Live Demo
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
+      ))}
+    </div>
+
+    {/* Mobile Projects Heading */}
+    <h2 className="text-4xl font-bold text-center text-gray-800 mt-20 mb-12">
+      Mobile <span className='text-blue-600'>Application Projects</span>
+    </h2>
+
+    {/* Mobile Projects Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+     {mobileProjects.map((project, index) => (
+  <div
+    key={index}
+    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-transform mt-5 max-w-xs mx-auto"
+  >
+    <div className="w-full">
+      <Image
+        src={project.image}
+        alt={project.title}
+        className="w-full h-auto object-contain"
+        width={300} // optional, for better optimization
+        height={600} // optional
+      />
+    </div>
+    <div className="p-4">
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">
+        {project.title}
+      </h3>
+      <p className="text-sm text-gray-600 mb-4">
+        {project.description}
+      </p>
+      <div className="flex justify-between items-center">
+        <Link
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white bg-gray-800 px-3 py-1.5 rounded-md inline-flex items-center hover:bg-gray-900 transition"
+        >
+          <FaGithub className="mr-2" />
+          GitHub
+        </Link>
+        <Link
+          href={project.liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white bg-blue-600 px-3 py-1.5 rounded-md inline-flex items-center hover:bg-blue-700 transition"
+        >
+          <FiExternalLink className="mr-2" />
+          Live Demo
+        </Link>
       </div>
-    </section>
+    </div>
+  </div>
+))}
+
+    </div>
+  </div>
+</section>
+
   );
 };
 
