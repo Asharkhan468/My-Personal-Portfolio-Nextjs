@@ -14,6 +14,8 @@ import currencyConverter from '../../public/currency-converter.png'
 import saltAndPepper from '../../public/salt-and-peper.png'
 import ExpenseTracker from '../../public/Expense Tracker SS.jpg'
 import job2do from '../../public/MYJOB2DO SS.jpg'
+import shinyService from '../../public/Claening.png'
+import NextBiz from '../../public/NextBitz.png'
 
 
 
@@ -33,6 +35,22 @@ const projects = [
     image:blogApppImg,
     github:'https://github.com/Asharkhan468/Blogging-App-React-js',
     liveDemo:'https://blogging-app-react-js-henna.vercel.app/'
+  },
+
+   {
+    title: "Shiny Spaces Service - Next App",
+    description:"Shiny Spaces Service - Next App is a modern, responsive landing page built with Next.js to showcase space cleaning services with a sleek and professional design.",
+    image:shinyService,
+    github:'https://github.com/Asharkhan468/Pulizie-De-Casa-Landing-Page',
+    liveDemo:'https://pulizie-de-casa-landing-page.vercel.app/'
+  },
+
+   {
+    title: "NextBiz - Next App",
+    description:"NextBiz - Next App is a sleek and responsive Next.js landing page designed to professionally showcase modern business services and boost online presence.",
+    image:NextBiz,
+    github:'https://github.com/Asharkhan468/Demo-Bussiness-Website',
+    liveDemo:'https://demo-bussiness-website.vercel.app/'
   },
   
   {
