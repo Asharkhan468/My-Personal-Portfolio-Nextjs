@@ -22,12 +22,13 @@ import NextBiz from '../../public/NextBitz.png'
 
 
 const projects = [
+
   {
-    title: "Weather App",
-    description: 'This responsive weather app provides real-time global weather updates, featuring key data like temperature and wind speed, built using JavaScript and API integration.',
-    image: weatherAppImg,
-    github: "https://github.com/Asharkhan468/Weather-App",
-    liveDemo: "https://myweatherforcastapp.netlify.app/",
+    title: "Shiny Spaces Service - Next App",
+    description:"Shiny Spaces Service - Next App is a modern, responsive landing page built with Next.js to showcase space cleaning services with a sleek and professional design.",
+    image:shinyService,
+    github:'https://github.com/Asharkhan468/Pulizie-De-Casa-Landing-Page',
+    liveDemo:'https://pulizie-de-casa-landing-page.vercel.app/'
   },
   {
     title: "Blogging App - React App",
@@ -38,11 +39,11 @@ const projects = [
   },
 
    {
-    title: "Shiny Spaces Service - Next App",
-    description:"Shiny Spaces Service - Next App is a modern, responsive landing page built with Next.js to showcase space cleaning services with a sleek and professional design.",
-    image:shinyService,
-    github:'https://github.com/Asharkhan468/Pulizie-De-Casa-Landing-Page',
-    liveDemo:'https://pulizie-de-casa-landing-page.vercel.app/'
+    title: "Weather App",
+    description: 'This responsive weather app provides real-time global weather updates, featuring key data like temperature and wind speed, built using JavaScript and API integration.',
+    image: weatherAppImg,
+    github: "https://github.com/Asharkhan468/Weather-App",
+    liveDemo: "https://myweatherforcastapp.netlify.app/",
   },
 
    {
