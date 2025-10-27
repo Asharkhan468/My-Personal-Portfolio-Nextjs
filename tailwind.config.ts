@@ -66,6 +66,9 @@ const config: Config = {
           to: { width: "100%" },
         },
       },
+       fontFamily: {
+      monda: ["var(--font-monda)"],
+    },
     },
   },
   plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],

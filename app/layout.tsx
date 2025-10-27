@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Monda } from "next/font/google";
 
-
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const monda = Monda({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "700"],
+  variable: "--font-monda",
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-// app/layout.tsx or wherever you're exporting metadata
+
+
 export const metadata: Metadata = {
   title: "Ashar Ullah Khan | MERN Stack Developer Portfolio",
-  description: "Explore the professional portfolio of Ashar Ullah Khan — a Full Stack MERN Developer specializing in modern web and mobile application development.",
+  description:
+    "Explore the professional portfolio of Ashar Ullah Khan — a Full Stack MERN Developer specializing in modern web and mobile application development.",
+    
   keywords: [
     "Ashar Ullah Khan",
     "Ashar Portfolio",
@@ -29,9 +26,14 @@ export const metadata: Metadata = {
     "Web Developer in Pakistan",
     "Freelance Web Developer",
     "Ashar Ullah Khan Website",
-    "Professional Portfolio"
+    "Professional Portfolio",
   ],
-  authors: [{ name: "Ashar Ullah Khan", url: "https://practice-nextjs-iota-one.vercel.app/" }],
+  authors: [
+    {
+      name: "Ashar Ullah Khan",
+      url: "https://practice-nextjs-iota-one.vercel.app/",
+    },
+  ],
   creator: "Ashar Ullah Khan",
   publisher: "Ashar Ullah Khan",
   metadataBase: new URL("https://practice-nextjs-iota-one.vercel.app/"),
@@ -58,11 +60,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ashar Ullah Khan | Web Developer",
-    description: "Explore the portfolio of MERN Stack Developer Ashar Ullah Khan.",
-    images: ["https://firebasestorage.googleapis.com/v0/b/image-to-url-converter-9483c.appspot.com/o/anonymous%40gmail.com%20%2B%201753123017625?alt=media&token=b658759c-25da-4c4e-a989-a0c8692ebcea"],
+    description:
+      "Explore the portfolio of MERN Stack Developer Ashar Ullah Khan.",
+    images: [
+      "https://firebasestorage.googleapis.com/v0/b/image-to-url-converter-9483c.appspot.com/o/anonymous%40gmail.com%20%2B%201753123017625?alt=media&token=b658759c-25da-4c4e-a989-a0c8692ebcea",
+    ],
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -71,13 +75,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100  scrollbar-hide `}
+      <body
+        className={` ${monda.variable} antialiased  scrollbar-hide bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 font-monda `}
       >
-         
-            <Navbar/>
-            {children}
-          
+        <Navbar />
+        {children}
       </body>
     </html>
   );
