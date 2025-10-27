@@ -1,7 +1,8 @@
 "use client";
+
 import React from "react";
 
-function ContactPage() {
+const ContactPage = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 px-6 py-16">
       <div className="max-w-2xl w-full bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-8 md:p-10 transition-all duration-500">
@@ -12,7 +13,7 @@ function ContactPage() {
         <form
           action="https://formspree.io/f/mrbggenw"
           method="POST"
-          className="space-y-2"
+          className="space-y-6"
         >
           <div>
             <label
@@ -60,7 +61,7 @@ function ContactPage() {
               name="message"
               required
               placeholder="Your Message"
-              rows="4"
+              rows={4}
               className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
             ></textarea>
           </div>
@@ -75,6 +76,6 @@ function ContactPage() {
       </div>
     </section>
   );
-}
+};
 
 export default ContactPage;
