@@ -70,6 +70,7 @@ const TypingEffectSection = () => {
         </motion.div>
 
         {/* Right Image */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +78,7 @@ const TypingEffectSection = () => {
           className="flex-1 flex justify-center z-10"
         >
           <Image
-            className="rounded-2xl transition-transform hover:scale-105 duration-500"
+            className="rounded-2xl transition-transform hover:scale-105 duration-500 h-[380px] w-[350px] "
             src={avatar}
             width={350}
             height={350}
