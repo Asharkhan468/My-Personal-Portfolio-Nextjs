@@ -1,100 +1,117 @@
-"use client";
-
-import React, { useState } from "react";
+"use client"
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { FaHome, FaUser, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const navItems = [
-  { label: "Home", href: "/", icon: <FaHome className="mr-2" /> },
-  { label: "About", href: "/about", icon: <FaUser className="mr-2" /> },
-  {
-    label: "Projects",
-    href: "/projects",
-    icon: <FaProjectDiagram className="mr-2" />,
-  },
-  { label: "Contact", href: "/contact", icon: <FaEnvelope className="mr-2" /> },
-];
+const Navbar = () => {
+  const [navOpen, setNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-const Navbar: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const handleLinkClick = () => setOpen(false);
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const links = [
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Education", href: "#education" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800 shadow-[0_2px_10px_rgba(0,0,0,0.6)] transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center py-4">
-          {/* ✅ Logo with link to Home */}
-          <Link href="/" className="cursor-pointer">
-            <div className="text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-600 hover:scale-105 transition-transform duration-300">
-              Ashar<span className="text-white">.</span>
-            </div>
-          </Link>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled ? "bg-gray-900/90 backdrop-blur-lg shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="#hero" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+          Ashar
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(({ label, href, icon }) => (
-              <Link
-                key={label}
-                href={href}
-                className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 font-medium text-lg relative group transition-all duration-300"
-              >
-                {icon}
-                {label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300 rounded-full"></span>
-              </Link>
-            ))}
-          </div>
+        {/* Desktop Links */}
+        <ul className="hidden md:flex gap-8 text-gray-200 font-semibold text-lg">
+          {links.map((link, i) => (
+            <li key={i} className="hover:text-cyan-400 transition">
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))}
+        </ul>
 
-          {/* Mobile Sidebar */}
-          <div className="md:hidden">
-            <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger className="text-gray-300 hover:text-cyan-400 focus:outline-none transition-colors duration-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-7 h-7"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              </SheetTrigger>
+        {/* Social Icons */}
+        <div className="hidden md:flex gap-4">
+          {[faGithub, faLinkedin, faInstagram].map((icon, i) => (
+            <a
+              key={i}
+              href={
+                icon === faGithub
+                  ? "https://github.com/Asharkhan468"
+                  : icon === faLinkedin
+                  ? "https://www.linkedin.com/in/ashar-ullah-khan-644a20374/"
+                  : "https://www.instagram.com/ashar_2347/"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-cyan-400 transition text-xl"
+            >
+              <FontAwesomeIcon icon={icon} />
+            </a>
+          ))}
+        </div>
 
-              <SheetContent
-                side="left"
-                className="w-64 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 border-r border-gray-800 text-gray-200 shadow-2xl p-0 overflow-hidden"
-              >
-                <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 border-b border-gray-800">
-                  {/* ✅ Mobile Logo also clickable */}
-                  <Link href="/" onClick={handleLinkClick}>
-                    <h2 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500 cursor-pointer">
-                      Ashar<span className="text-white">.</span>
-                    </h2>
-                  </Link>
-                </div>
+        {/* Mobile Hamburger */}
+        <div className="md:hidden z-50">
+          <button onClick={() => setNavOpen(!navOpen)} className="text-gray-200 text-2xl focus:outline-none">
+            <FontAwesomeIcon icon={navOpen ? faTimes : faBars} />
+          </button>
+        </div>
+      </div>
 
-                <div className="flex flex-col space-y-3 px-5 py-6">
-                  {navItems.map(({ label, href, icon }) => (
-                    <Link
-                      key={label}
-                      href={href}
-                      onClick={handleLinkClick}
-                      className="flex items-center gap-3 text-gray-300 text-lg font-medium px-4 py-2 rounded-md bg-gray-900/40 hover:border-cyan-400 hover:text-cyan-400 hover:shadow-[0_0_10px_#00ffff40] transition-all duration-300"
-                    >
-                      {icon}
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-gray-900/95 backdrop-blur-lg flex flex-col items-center justify-center gap-12 text-2xl transition-transform duration-500 ${
+          navOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {links.map((link, i) => (
+          <a
+            key={i}
+            href={link.href}
+            onClick={() => setNavOpen(false)}
+            className="text-gray-200 hover:text-cyan-400 transition"
+          >
+            {link.name}
+          </a>
+        ))}
+
+        <div className="flex gap-6 mt-6">
+          {[faGithub, faLinkedin, faInstagram].map((icon, i) => (
+            <a
+              key={i}
+              href={
+                icon === faGithub
+                  ? "https://github.com/Asharkhan468"
+                  : icon === faLinkedin
+                  ? "https://www.linkedin.com/in/ashar-ullah-khan-644a20374/"
+                  : "https://www.instagram.com/ashar_2347/"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-200 hover:text-cyan-400 transition text-3xl"
+            >
+              <FontAwesomeIcon icon={icon} />
+            </a>
+          ))}
         </div>
       </div>
     </nav>
