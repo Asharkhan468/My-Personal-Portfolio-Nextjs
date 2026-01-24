@@ -198,11 +198,12 @@ const TypingEffectSection = () => {
   ];
   return (
     <>
-      {/* Hero Section */}
-      <section
-        id="hero"
-        className="relative flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 overflow-hidden"
-      >
+     <section
+  id="hero"
+  className="relative pt-24 md:pt-0 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 overflow-hidden"
+>
+
+
         {/* Animated circles background */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl top-10 left-10 animate-pulse"></div>
@@ -265,7 +266,7 @@ const TypingEffectSection = () => {
                 color: "text-blue-500",
               },
               {
-                href: "https://www.instagram.com/ashar_2347/",
+                href: "https://www.instagram.com/dev_ashar_khan/",
                 icon: faInstagram,
                 color: "text-pink-500",
               },
@@ -279,16 +280,17 @@ const TypingEffectSection = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Link
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center w-16 h-16 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg"
-                >
-                  <FontAwesomeIcon
-                    icon={social.icon}
-                    className={`w-8 h-8 text-gray-300 group-hover:${social.color}`}
-                  />
-                </Link>
+  href={social.href}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg"
+>
+  <FontAwesomeIcon
+    icon={social.icon}
+    className={`w-5 h-5 md:w-6 md:h-6 text-gray-300 group-hover:${social.color}`}
+  />
+</Link>
+
               </motion.div>
             ))}
           </div>
@@ -472,310 +474,307 @@ const TypingEffectSection = () => {
       `}</style>
 
       {/* <section className="py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 min-h-screen"> */}
-      <section
-        id="projects"
-        className="relative flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            My Recent <span className="text-blue-500">Projects</span>
-          </h2>
+     <section
+  id="projects"
+  className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
+>
+  <div className="container mx-auto px-4 sm:px-6">
+    {/* Web Projects */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
+      My Recent <span className="text-blue-500">Projects</span>
+    </h2>
 
-          {/* Web Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-2 transition-all duration-500"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-60 object-cover"
-                  width={400}
-                  height={400}
-                />
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-6 text-sm">
-                    {project.description}
-                  </p>
-                  <div className="flex justify-between">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="px-4 py-2 bg-gray-800 rounded-md text-sm font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
-                    >
-                      <FaGithub />
-                      GitHub
-                    </Link>
-                    <Link
-                      href={project.liveDemo}
-                      target="_blank"
-                      className="px-4 py-2 bg-blue-600 rounded-md text-sm font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
-                    >
-                      <FiExternalLink />
-                      Live Demo
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Projects */}
-
-          <h2 className="text-4xl md:text-5xl font-bold text-center mt-24 mb-16">
-            Mobile <span className="text-blue-500">Applications</span>
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mobileProjects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 hover:-translate-y-2 transition-all duration-500"
-              >
-                {/* Mobile preview container */}
-                <div className="flex justify-center items-center bg-gray-950 py-6">
-                  <div className="relative w-48 h-96 rounded-3xl border-4 border-gray-800 shadow-inner overflow-hidden bg-black">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      width={300}
-                      height={600}
-                    />
-                  </div>
-                </div>
-
-                {/* Project details */}
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-5 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex justify-between">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="px-3 py-2 bg-gray-800 rounded-md text-sm font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
-                    >
-                      <FaGithub />
-                      GitHub
-                    </Link>
-                    <Link
-                      href={project.liveDemo}
-                      target="_blank"
-                      className="px-3 py-2 bg-blue-600 rounded-md text-sm font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
-                    >
-                      <FiExternalLink />
-                      Live Demo
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="education"
-        className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 px-6 py-20"
-      >
-        {/* SECTION HEADING */}
-        <h2 className="text-5xl font-bold text-center mb-16">
-          My <span className="text-blue-500">Education</span>
-        </h2>
-
-        {/* EDUCATION CARDS - CENTER ALIGNED */}
-        <div className="max-w-3xl mx-auto flex flex-col items-center space-y-6">
-          {/* BACHELORS */}
-          {/* BACHELORS WITH PRESENT BADGE */}
-          <div className="relative bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-            {/* PRESENT BADGE */}
-            <span className="absolute top-4 right-4 bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-              Present
-            </span>
-
-            <div className="flex items-start gap-4">
-              <FontAwesomeIcon
-                icon={faUniversity}
-                className="text-blue-500 text-2xl mt-1"
-              />
-              <div>
-                <h4 className="text-xl font-semibold">
-                  Bachelor’s in Software Engineering
-                </h4>
-                <p className="text-gray-400">Mohammad Ali Jinnah University</p>
-              </div>
-            </div>
-          </div>
-
-          {/* INTERMEDIATE */}
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-            <div className="flex items-start gap-4">
-              <FontAwesomeIcon
-                icon={faGraduationCap}
-                className="text-blue-500 text-2xl mt-1"
-              />
-              <div>
-                <h4 className="text-xl font-semibold">
-                  Intermediate (Computer Science)
-                </h4>
-                <p className="text-gray-400">Govt. Superior Science College</p>
-              </div>
-            </div>
-          </div>
-
-          {/* DIPLOMA */}
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-            <div className="flex items-start gap-4">
-              <FontAwesomeIcon
-                icon={faLaptopCode}
-                className="text-blue-500 text-2xl mt-1"
-              />
-              <div>
-                <h4 className="text-xl font-semibold">
-                  Diploma in Web & Mobile App Development
-                </h4>
-                <p className="text-gray-400">
-                  Saylani Mass IT Training Program (1 Year)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* MATRIC */}
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-            <div className="flex items-start gap-4">
-              <FontAwesomeIcon
-                icon={faSchool}
-                className="text-blue-500 text-2xl mt-1"
-              />
-              <div>
-                <h4 className="text-xl font-semibold">Matriculation</h4>
-                <p className="text-gray-400">M. W. Academy School</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 px-6 py-16"
-      >
-        {/* TOP CENTER HEADING */}
-        <h2 className="text-5xl font-bold text-center mb-16">
-          Get in <span className="text-blue-500">Touch</span>
-        </h2>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-14 items-start mt-6">
-          {/* LEFT SIDE */}
-          <div className="space-y-8">
-            <h3 className="text-4xl font-bold leading-tight">
-              Let’s <span className="text-blue-500">Work</span> Together
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+        >
+          <Image
+            src={project.image}
+            alt={project.title}
+            className="w-full h-52 sm:h-60 md:h-64 lg:h-60 object-cover"
+            width={400}
+            height={400}
+          />
+          <div className="p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">
+              {project.title}
             </h3>
-
-            <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
-              I'm currently looking for new opportunities. Whether you have a
-              question or just want to say hi, feel free to reach out. I’ll do
-              my best to get back to you as soon as possible.
+            <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+              {project.description}
             </p>
+            <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+              <Link
+                href={project.github}
+                target="_blank"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
+              >
+                <FaGithub /> GitHub
+              </Link>
+              <Link
+                href={project.liveDemo}
+                target="_blank"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+              >
+                <FiExternalLink /> Live Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
 
-            <div className="space-y-5 text-gray-300">
-              <div className="flex items-center gap-4">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  className="text-blue-500 text-xl"
-                />
-                <span>ashar@innovatesoftwaresolution.com</span>
-              </div>
+    {/* Mobile Projects */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 sm:mt-24 mb-12 sm:mb-16">
+      Mobile <span className="text-blue-500">Applications</span>
+    </h2>
 
-              <div className="flex items-center gap-4">
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  className="text-blue-500 text-xl"
-                />
-                <span>+92 317 2597708</span>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <FontAwesomeIcon
-                  icon={faLocationDot}
-                  className="text-blue-500 text-xl"
-                />
-                <span>Karachi, PK</span>
-              </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      {mobileProjects.map((project, index) => (
+        <div
+          key={index}
+          className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+        >
+          {/* Mobile preview container */}
+          <div className="flex justify-center items-center bg-gray-950 py-4 sm:py-6">
+            <div className="relative w-36 sm:w-44 md:w-48 h-72 sm:h-80 md:h-96 rounded-3xl border-4 border-gray-800 shadow-inner overflow-hidden bg-black">
+              <Image
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                width={300}
+                height={600}
+              />
             </div>
           </div>
 
-          {/* RIGHT SIDE FORM */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-8 md:p-10">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              Send <span className="text-blue-500">Message</span>
+          {/* Project details */}
+          <div className="p-4 sm:p-5">
+            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+              {project.title}
             </h3>
-
-            <form
-              action="https://formspree.io/f/mrbggenw"
-              method="POST"
-              className="space-y-6"
-            >
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-300">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-300">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-300">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  rows={4}
-                  required
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition"
-                ></textarea>
-              </div>
-
-              {/* SEND MESSAGE */}
-              <button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition"
+            <p className="text-gray-400 mb-4 sm:mb-5 text-sm sm:text-base leading-relaxed">
+              {project.description}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+              <Link
+                href={project.github}
+                target="_blank"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
               >
-                Send Message
-              </button>
-            </form>
+                <FaGithub /> GitHub
+              </Link>
+              <Link
+                href={project.liveDemo}
+                target="_blank"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+              >
+                <FiExternalLink /> Live Demo
+              </Link>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+     <section
+  id="education"
+  className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 px-4 sm:px-6 lg:px-20 py-16 sm:py-20"
+>
+  {/* SECTION HEADING */}
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
+    My <span className="text-blue-500">Education</span>
+  </h2>
+
+  {/* EDUCATION CARDS - CENTER ALIGNED */}
+  <div className="max-w-3xl mx-auto flex flex-col items-center space-y-4 sm:space-y-6">
+    {/* BACHELORS */}
+    <div className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
+      {/* PRESENT BADGE */}
+      <span className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-blue-500 text-white text-xs sm:text-sm font-semibold px-2 sm:px-3 py-1 rounded-full">
+        Present
+      </span>
+
+      <div className="flex items-start gap-3 sm:gap-4">
+        <FontAwesomeIcon
+          icon={faUniversity}
+          className="text-blue-500 text-xl sm:text-2xl mt-1"
+        />
+        <div>
+          <h4 className="text-lg sm:text-xl font-semibold">
+            Bachelor’s in Software Engineering
+          </h4>
+          <p className="text-gray-400 text-sm sm:text-base">
+            Mohammad Ali Jinnah University
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* INTERMEDIATE */}
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
+      <div className="flex items-start gap-3 sm:gap-4">
+        <FontAwesomeIcon
+          icon={faGraduationCap}
+          className="text-blue-500 text-xl sm:text-2xl mt-1"
+        />
+        <div>
+          <h4 className="text-lg sm:text-xl font-semibold">
+            Intermediate (Computer Science)
+          </h4>
+          <p className="text-gray-400 text-sm sm:text-base">
+            Govt. Superior Science College
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* DIPLOMA */}
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
+      <div className="flex items-start gap-3 sm:gap-4">
+        <FontAwesomeIcon
+          icon={faLaptopCode}
+          className="text-blue-500 text-xl sm:text-2xl mt-1"
+        />
+        <div>
+          <h4 className="text-lg sm:text-xl font-semibold">
+            Diploma in Web & Mobile App Development
+          </h4>
+          <p className="text-gray-400 text-sm sm:text-base">
+            Saylani Mass IT Training Program (1 Year)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* MATRIC */}
+    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
+      <div className="flex items-start gap-3 sm:gap-4">
+        <FontAwesomeIcon
+          icon={faSchool}
+          className="text-blue-500 text-xl sm:text-2xl mt-1"
+        />
+        <div>
+          <h4 className="text-lg sm:text-xl font-semibold">Matriculation</h4>
+          <p className="text-gray-400 text-sm sm:text-base">M. W. Academy School</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  id="contact"
+  className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 
+             px-4 sm:px-6 lg:px-20 
+             pt-6 pb-10 sm:pt-16 sm:pb-16"
+>
+
+
+  {/* TOP CENTER HEADING */}
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16">
+    Get in <span className="text-blue-500">Touch</span>
+  </h2>
+
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
+    {/* LEFT SIDE */}
+    <div className="space-y-6 sm:space-y-8">
+      <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
+        Let’s <span className="text-blue-500">Work</span> Together
+      </h3>
+
+      <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
+        I'm currently looking for new opportunities. Whether you have a
+        question or just want to say hi, feel free to reach out. I’ll do
+        my best to get back to you as soon as possible.
+      </p>
+
+      {/* <div className="space-y-4 sm:space-y-5 text-gray-300 "> */}
+      <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
+
+        <div className="flex items-center gap-3 sm:gap-4 ">
+          <FontAwesomeIcon icon={faEnvelope} className="text-blue-500 text-lg sm:text-xl" />
+          <span className="text-sm sm:text-base">ashar@innovatesoftwaresolution.com</span>
+        </div>
+
+        <div className="flex items-center gap-3 sm:gap-4">
+          <FontAwesomeIcon icon={faPhone} className="text-blue-500 text-lg sm:text-xl" />
+          <span className="text-sm sm:text-base">+92 317 2597708</span>
+        </div>
+
+        <div className="flex items-center gap-3 sm:gap-4">
+          <FontAwesomeIcon icon={faLocationDot} className="text-blue-500 text-lg sm:text-xl" />
+          <span className="text-sm sm:text-base">Karachi, PK</span>
+        </div>
+      </div>
+    </div>
+
+    {/* RIGHT SIDE FORM */}
+    <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10">
+      <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
+        Send <span className="text-blue-500">Message</span>
+      </h3>
+
+      <form
+        action="https://formspree.io/f/mrbggenw"
+        method="POST"
+        className="space-y-4 sm:space-y-6"
+      >
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Your Name"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your Email"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Message
+          </label>
+          <textarea
+            name="message"
+            rows={4}
+            required
+            placeholder="Your Message"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          ></textarea>
+        </div>
+
+        {/* SEND MESSAGE */}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
       {/* Social Icons Section */}
       <motion.section
@@ -816,7 +815,7 @@ const TypingEffectSection = () => {
               color: "text-blue-500",
             },
             {
-              href: "https://www.instagram.com/ashar_2347/",
+              href: "https://www.instagram.com/dev_ashar_khan/",
               icon: faInstagram,
               color: "text-pink-500",
             },
