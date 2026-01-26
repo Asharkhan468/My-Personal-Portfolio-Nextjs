@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import guyAvatar from "../public/avatar.webp";
 import avatar from "../public/avatar.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
