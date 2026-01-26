@@ -201,7 +201,8 @@ const TypingEffectSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -210,7 +211,8 @@ const TypingEffectSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -229,7 +231,8 @@ const TypingEffectSection = () => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -237,7 +240,8 @@ const TypingEffectSection = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -246,7 +250,8 @@ const TypingEffectSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -264,7 +269,8 @@ const TypingEffectSection = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+},
     },
   };
 
@@ -273,7 +279,8 @@ const TypingEffectSection = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -289,7 +296,8 @@ const TypingEffectSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1]
+ },
     },
   };
 
@@ -303,7 +311,7 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], // ✅ easeOut curve
+      ease: [0.16, 1, 0.3, 1], 
     },
   },
 };
