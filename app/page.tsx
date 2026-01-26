@@ -197,65 +197,42 @@ const TypingEffectSection = () => {
     },
   ];
 
-  const sectionFade = {
+  const sectionFade: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const titleAnim = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
- },
-    },
-  };
-
-  const containerStagger = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const cardAnim = {
+  const cardAnim: Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.96 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const sectionAnim = {
+  const sectionAnim: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const headingAnim = {
+  const headingAnim: Variants = {
     hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const listStagger = {
+  const listStagger: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -264,65 +241,60 @@ const TypingEffectSection = () => {
     },
   };
 
-  const leftAnim = {
+  const leftAnim: Variants = {
     hidden: { opacity: 0, x: -40 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
-},
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const rightAnim = {
+  const rightAnim: Variants = {
     hidden: { opacity: 0, x: 40 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-  const formStagger = {
+  const formStagger: Variants = {
     hidden: {},
     visible: {
       transition: { staggerChildren: 0.12 },
     },
   };
 
-  const inputAnim = {
+  const inputAnim: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1]
- },
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.16, 1, 0.3, 1], 
+  const fadeUp: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
     },
-  },
-};
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
 
-
-const stagger = {
-  visible: {
-    transition: { staggerChildren: 0.08 }
-  }
-};
-
+  const stagger: Variants = {
+    visible: {
+      transition: { staggerChildren: 0.08 },
+    },
+  };
 
   return (
     <>
@@ -685,7 +657,6 @@ const stagger = {
   px-4 sm:px-6 lg:px-20
   py-10 sm:py-20
 "
-
       >
         {/* SECTION HEADING */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
@@ -803,13 +774,12 @@ const stagger = {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-       className="
+        className="
   bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
   text-gray-200
   px-4 sm:px-6 lg:px-20
   pt-4 pb-10 sm:pt-16 sm:pb-16
 "
-
       >
         <motion.h2
           variants={headingAnim}
