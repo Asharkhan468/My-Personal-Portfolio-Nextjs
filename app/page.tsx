@@ -196,14 +196,125 @@ const TypingEffectSection = () => {
       image: ExpenseTracker,
     },
   ];
+
+  const sectionFade = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const titleAnim = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const containerStagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardAnim = {
+    hidden: { opacity: 0, y: 40, scale: 0.96 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const sectionAnim = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const headingAnim = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const listStagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const leftAnim = {
+    hidden: { opacity: 0, x: -40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const rightAnim = {
+    hidden: { opacity: 0, x: 40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const formStagger = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+
+  const inputAnim = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  };
+
+  const fadeUp = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: "easeOut" }
+  }
+};
+
+const stagger = {
+  visible: {
+    transition: { staggerChildren: 0.08 }
+  }
+};
+
+
   return (
     <>
-     <section
-  id="hero"
-  className="relative pt-24 md:pt-0 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 overflow-hidden"
->
-
-
+      <section
+        id="hero"
+        className="relative pt-24 md:pt-0 flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 overflow-hidden"
+      >
         {/* Animated circles background */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl top-10 left-10 animate-pulse"></div>
@@ -280,17 +391,16 @@ const TypingEffectSection = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Link
-  href={social.href}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg"
->
-  <FontAwesomeIcon
-    icon={social.icon}
-    className={`w-5 h-5 md:w-6 md:h-6 text-gray-300 group-hover:${social.color}`}
-  />
-</Link>
-
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg"
+                >
+                  <FontAwesomeIcon
+                    icon={social.icon}
+                    className={`w-5 h-5 md:w-6 md:h-6 text-gray-300 group-hover:${social.color}`}
+                  />
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -334,8 +444,8 @@ const TypingEffectSection = () => {
             Let me <span className="text-cyan-400">introduce</span> myself
           </h1>
           <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-            My journey into programming has been incredible — full of learning
-            and creativity. 🚀
+            My journey into programming has been incredible full of learning and
+            creativity.
             <br />
             <br />
             I’m skilled in technologies like
@@ -379,12 +489,12 @@ const TypingEffectSection = () => {
 
       <section
         id="skills"
-        className="relative py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
+        className="relative py-16 md:py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
       >
         {/* Background Circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-10 right-20 animate-pulse"></div>
-          <div className="absolute w-80 h-80 bg-purple-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div>
+          <div className="absolute w-72 md:w-96 h-72 md:h-96 bg-cyan-500/10 rounded-full blur-3xl top-10 right-10 md:right-20 animate-pulse"></div>
+          <div className="absolute w-64 md:w-80 h-64 md:h-80 bg-purple-500/10 rounded-full blur-3xl bottom-10 left-6 md:left-10 animate-pulse"></div>
         </div>
 
         <motion.h2
@@ -392,36 +502,32 @@ const TypingEffectSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
         >
           My <span className="text-purple-400">Skill Set</span>
         </motion.h2>
 
-        <div className="flex flex-col gap-10 w-full">
-          {/* Rows */}
+        <div className="flex flex-col gap-8 md:gap-10 w-full">
           {[skills.slice(0, 9), skills.slice(9, 18)].map(
             (rowSkills, rowIndex) => (
               <div
                 key={rowIndex}
-                className="relative w-full overflow-hidden group mt-4"
+                className="relative w-full overflow-hidden group mt-2 md:mt-4"
               >
                 <div
-                  className={`flex gap-12 w-max ${
-                    rowIndex === 0
-                      ? "animate-slide-left"
-                      : "animate-slide-right"
-                  }`}
+                  className={`flex gap-6 sm:gap-8 md:gap-12 w-max
+  group-hover:[animation-play-state:paused]
+  ${rowIndex === 0 ? "animate-slide-left" : "animate-slide-right"}`}
                 >
-                  {/* Duplicate skills for seamless loop */}
                   {[...rowSkills, ...rowSkills].map((skill, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center min-w-[150px]"
+                      className="flex flex-col items-center min-w-[90px] sm:min-w-[120px] md:min-w-[150px]"
                     >
-                      <div className="text-6xl mb-2">{skill.icon}</div>
-                      <h3
-                        className={`text-xl font-semibold text-center text-gray-200 `}
-                      >
+                      <div className="text-4xl sm:text-5xl md:text-6xl mb-1 md:mb-2">
+                        {skill.icon}
+                      </div>
+                      <h3 className="text-sm sm:text-base md:text-xl font-semibold text-center text-gray-200">
                         {skill.name}
                       </h3>
                     </div>
@@ -433,348 +539,399 @@ const TypingEffectSection = () => {
         </div>
       </section>
 
-      <style jsx>{`
-        /* Row 1: slide left */
-        @keyframes slideLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        /* Row 2: slide right */
-        @keyframes slideRight {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-slide-left {
-          display: flex;
-          gap: 3rem;
-          animation: slideLeft 35s linear infinite;
-        }
-
-        .animate-slide-right {
-          display: flex;
-          gap: 3rem;
-          animation: slideRight 40s linear infinite;
-        }
-
-        /* Hover to pause */
-        .group:hover .animate-slide-left,
-        .group:hover .animate-slide-right {
-          animation-play-state: paused !important;
-        }
-      `}</style>
-
-      {/* <section className="py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 min-h-screen"> */}
-     <section
-  id="projects"
-  className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
->
-  <div className="container mx-auto px-4 sm:px-6">
-    {/* Web Projects */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
-      My Recent <span className="text-blue-500">Projects</span>
-    </h2>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
-        >
-          <Image
-            src={project.image}
-            alt={project.title}
-            className="w-full h-52 sm:h-60 md:h-64 lg:h-60 object-cover"
-            width={400}
-            height={400}
-          />
-          <div className="p-4 sm:p-6">
-            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
-              {project.description}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
-              <Link
-                href={project.github}
-                target="_blank"
-                className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
-              >
-                <FaGithub /> GitHub
-              </Link>
-              <Link
-                href={project.liveDemo}
-                target="_blank"
-                className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
-              >
-                <FiExternalLink /> Live Demo
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* Mobile Projects */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 sm:mt-24 mb-12 sm:mb-16">
-      Mobile <span className="text-blue-500">Applications</span>
-    </h2>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-      {mobileProjects.map((project, index) => (
-        <div
-          key={index}
-          className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
-        >
-          {/* Mobile preview container */}
-          <div className="flex justify-center items-center bg-gray-950 py-4 sm:py-6">
-            <div className="relative w-36 sm:w-44 md:w-48 h-72 sm:h-80 md:h-96 rounded-3xl border-4 border-gray-800 shadow-inner overflow-hidden bg-black">
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                width={300}
-                height={600}
-              />
-            </div>
-          </div>
-
-          {/* Project details */}
-          <div className="p-4 sm:p-5">
-            <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-              {project.title}
-            </h3>
-            <p className="text-gray-400 mb-4 sm:mb-5 text-sm sm:text-base leading-relaxed">
-              {project.description}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
-              <Link
-                href={project.github}
-                target="_blank"
-                className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
-              >
-                <FaGithub /> GitHub
-              </Link>
-              <Link
-                href={project.liveDemo}
-                target="_blank"
-                className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
-              >
-                <FiExternalLink /> Live Demo
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-     <section
-  id="education"
-  className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 px-4 sm:px-6 lg:px-20 py-16 sm:py-20"
->
-  {/* SECTION HEADING */}
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
-    My <span className="text-blue-500">Education</span>
-  </h2>
-
-  {/* EDUCATION CARDS - CENTER ALIGNED */}
-  <div className="max-w-3xl mx-auto flex flex-col items-center space-y-4 sm:space-y-6">
-    {/* BACHELORS */}
-    <div className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-      {/* PRESENT BADGE */}
-      <span className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-blue-500 text-white text-xs sm:text-sm font-semibold px-2 sm:px-3 py-1 rounded-full">
-        Present
-      </span>
-
-      <div className="flex items-start gap-3 sm:gap-4">
-        <FontAwesomeIcon
-          icon={faUniversity}
-          className="text-blue-500 text-xl sm:text-2xl mt-1"
-        />
-        <div>
-          <h4 className="text-lg sm:text-xl font-semibold">
-            Bachelor’s in Software Engineering
-          </h4>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Mohammad Ali Jinnah University
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* INTERMEDIATE */}
-    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-      <div className="flex items-start gap-3 sm:gap-4">
-        <FontAwesomeIcon
-          icon={faGraduationCap}
-          className="text-blue-500 text-xl sm:text-2xl mt-1"
-        />
-        <div>
-          <h4 className="text-lg sm:text-xl font-semibold">
-            Intermediate (Computer Science)
-          </h4>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Govt. Superior Science College
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* DIPLOMA */}
-    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-      <div className="flex items-start gap-3 sm:gap-4">
-        <FontAwesomeIcon
-          icon={faLaptopCode}
-          className="text-blue-500 text-xl sm:text-2xl mt-1"
-        />
-        <div>
-          <h4 className="text-lg sm:text-xl font-semibold">
-            Diploma in Web & Mobile App Development
-          </h4>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Saylani Mass IT Training Program (1 Year)
-          </p>
-        </div>
-      </div>
-    </div>
-
-    {/* MATRIC */}
-    <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full">
-      <div className="flex items-start gap-3 sm:gap-4">
-        <FontAwesomeIcon
-          icon={faSchool}
-          className="text-blue-500 text-xl sm:text-2xl mt-1"
-        />
-        <div>
-          <h4 className="text-lg sm:text-xl font-semibold">Matriculation</h4>
-          <p className="text-gray-400 text-sm sm:text-base">M. W. Academy School</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section
-  id="contact"
-  className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-gray-200 
-             px-4 sm:px-6 lg:px-20 
-             pt-6 pb-10 sm:pt-16 sm:pb-16"
->
-
-
-  {/* TOP CENTER HEADING */}
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16">
-    Get in <span className="text-blue-500">Touch</span>
-  </h2>
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
-    {/* LEFT SIDE */}
-    <div className="space-y-6 sm:space-y-8">
-      <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
-        Let’s <span className="text-blue-500">Work</span> Together
-      </h3>
-
-      <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
-        I'm currently looking for new opportunities. Whether you have a
-        question or just want to say hi, feel free to reach out. I’ll do
-        my best to get back to you as soon as possible.
-      </p>
-
-      {/* <div className="space-y-4 sm:space-y-5 text-gray-300 "> */}
-      <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
-
-        <div className="flex items-center gap-3 sm:gap-4 ">
-          <FontAwesomeIcon icon={faEnvelope} className="text-blue-500 text-lg sm:text-xl" />
-          <span className="text-sm sm:text-base">ashar@innovatesoftwaresolution.com</span>
-        </div>
-
-        <div className="flex items-center gap-3 sm:gap-4">
-          <FontAwesomeIcon icon={faPhone} className="text-blue-500 text-lg sm:text-xl" />
-          <span className="text-sm sm:text-base">+92 317 2597708</span>
-        </div>
-
-        <div className="flex items-center gap-3 sm:gap-4">
-          <FontAwesomeIcon icon={faLocationDot} className="text-blue-500 text-lg sm:text-xl" />
-          <span className="text-sm sm:text-base">Karachi, PK</span>
-        </div>
-      </div>
-    </div>
-
-    {/* RIGHT SIDE FORM */}
-    <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10">
-      <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
-        Send <span className="text-blue-500">Message</span>
-      </h3>
-
-      <form
-        action="https://formspree.io/f/mrbggenw"
-        method="POST"
-        className="space-y-4 sm:space-y-6"
+      <motion.section
+        id="projects"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
       >
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your Name"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your Email"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Message
-          </label>
-          <textarea
-            name="message"
-            rows={4}
-            required
-            placeholder="Your Message"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          ></textarea>
-        </div>
-
-        {/* SEND MESSAGE */}
-        <button
-          type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
+        <section
+          id="projects"
+          className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
         >
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16"
+            >
+              My Recent <span className="text-blue-500">Projects</span>
+            </motion.h2>
+            <motion.div
+              variants={stagger}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+            >
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-52 sm:h-60 md:h-64 lg:h-60 object-cover"
+                    width={400}
+                    height={400}
+                  />
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
+                      >
+                        <FaGithub /> GitHub
+                      </Link>
+                      <Link
+                        href={project.liveDemo}
+                        target="_blank"
+                        className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+                      >
+                        <FiExternalLink /> Live Demo
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
 
+            {/* Mobile Projects */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 sm:mt-24 mb-12 sm:mb-16">
+              Mobile <span className="text-blue-500">Applications</span>
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+              {mobileProjects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+                >
+                  {/* Mobile preview container */}
+                  <div className="flex justify-center items-center bg-gray-950 py-4 sm:py-6">
+                    <div className="relative w-36 sm:w-44 md:w-48 h-72 sm:h-80 md:h-96 rounded-3xl border-4 border-gray-800 shadow-inner overflow-hidden bg-black">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                        width={300}
+                        height={600}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Project details */}
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 sm:mb-5 text-sm sm:text-base leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
+                      >
+                        <FaGithub /> GitHub
+                      </Link>
+                      <Link
+                        href={project.liveDemo}
+                        target="_blank"
+                        className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+                      >
+                        <FiExternalLink /> Live Demo
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </motion.section>
+
+      <motion.section
+        id="education"
+        variants={sectionAnim}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="
+  min-h-[auto] md:min-h-screen
+  bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
+  text-gray-200
+  px-4 sm:px-6 lg:px-20
+  py-10 sm:py-20
+"
+
+      >
+        {/* SECTION HEADING */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
+          My <span className="text-blue-500">Education</span>
+        </h2>
+        {/* EDUCATION CARDS - CENTER ALIGNED */}
+
+        <motion.div
+          variants={listStagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="max-w-3xl mx-auto flex flex-col items-center space-y-4 sm:space-y-6"
+        >
+          {/* BACHELORS */}
+          <motion.div
+            variants={cardAnim}
+            whileHover={{ x: 4, scale: 1.02 }}
+            className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"
+          >
+            {/* PRESENT BADGE */}
+            <span className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-blue-500 text-white text-xs sm:text-sm font-semibold px-2 sm:px-3 py-1 rounded-full">
+              Present
+            </span>
+
+            <div className="flex items-start gap-3 sm:gap-4">
+              <FontAwesomeIcon
+                icon={faUniversity}
+                className="text-blue-500 text-xl sm:text-2xl mt-1"
+              />
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold">
+                  Bachelor’s in Software Engineering
+                </h4>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Mohammad Ali Jinnah University
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* INTERMEDIATE */}
+          {/* <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"> */}
+          <motion.div
+            variants={cardAnim}
+            whileHover={{ x: 4, scale: 1.02 }}
+            className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"
+          >
+            <div className="flex items-start gap-3 sm:gap-4">
+              <FontAwesomeIcon
+                icon={faGraduationCap}
+                className="text-blue-500 text-xl sm:text-2xl mt-1"
+              />
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold">
+                  Intermediate (Computer Science)
+                </h4>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Govt. Superior Science College
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* DIPLOMA */}
+          {/* <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"> */}
+          <motion.div
+            variants={cardAnim}
+            whileHover={{ x: 4, scale: 1.02 }}
+            className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"
+          >
+            <div className="flex items-start gap-3 sm:gap-4">
+              <FontAwesomeIcon
+                icon={faLaptopCode}
+                className="text-blue-500 text-xl sm:text-2xl mt-1"
+              />
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold">
+                  Diploma in Web & Mobile App Development
+                </h4>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  Saylani Mass IT Training Program (1 Year)
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* MATRIC */}
+          <motion.div
+            variants={cardAnim}
+            whileHover={{ x: 4, scale: 1.02 }}
+            className="relative bg-gray-900 border border-gray-800 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-blue-500/20 transition w-full"
+          >
+            <div className="flex items-start gap-3 sm:gap-4">
+              <FontAwesomeIcon
+                icon={faSchool}
+                className="text-blue-500 text-xl sm:text-2xl mt-1"
+              />
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold">
+                  Matriculation
+                </h4>
+                <p className="text-gray-400 text-sm sm:text-base">
+                  M. W. Academy School
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        id="contact"
+        variants={sectionFade}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+       className="
+  bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
+  text-gray-200
+  px-4 sm:px-6 lg:px-20
+  pt-4 pb-10 sm:pt-16 sm:pb-16
+"
+
+      >
+        <motion.h2
+          variants={headingAnim}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10"
+        >
+          Get in <span className="text-blue-500">Touch</span>
+        </motion.h2>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
+          {/* LEFT SIDE */}
+          <motion.div
+            variants={leftAnim}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-6 sm:space-y-8"
+          >
+            <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
+              Let’s <span className="text-blue-500">Work</span> Together
+            </h3>
+
+            <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
+              I'm currently looking for new opportunities. Whether you have a
+              question or just want to say hi, feel free to reach out. I’ll do
+              my best to get back to you as soon as possible.
+            </p>
+
+            {/* <div className="space-y-4 sm:space-y-5 text-gray-300 "> */}
+            <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-3 sm:gap-4 ">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">
+                  ashar@innovatesoftwaresolution.com
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">+92 317 2597708</span>
+              </div>
+
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">Karachi, PK</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE FORM */}
+          <motion.div
+            variants={rightAnim}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10"
+          >
+            <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
+              Send <span className="text-blue-500">Message</span>
+            </h3>
+
+            <motion.form
+              variants={formStagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              action="https://formspree.io/f/mrbggenw"
+              method="POST"
+              className="space-y-4 sm:space-y-6"
+            >
+              <motion.div variants={inputAnim}>
+                <div>
+                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Your Name"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                  />
+                </div>
+              </motion.div>
+              <motion.div variants={inputAnim}>
+                <div>
+                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Your Email"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div variants={inputAnim}>
+                <div>
+                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    required
+                    placeholder="Your Message"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                  ></textarea>
+                </div>
+              </motion.div>
+
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
+              >
+                Send Message
+              </motion.button>
+            </motion.form>
+          </motion.div>
+        </div>
+      </motion.section>
 
       {/* Social Icons Section */}
       <motion.section
