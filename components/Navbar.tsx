@@ -58,7 +58,7 @@ const Navbar = () => {
                   ? "https://github.com/Asharkhan468"
                   : icon === faLinkedin
                   ? "https://www.linkedin.com/in/ashar-ullah-khan-644a20374/"
-                  : "https://www.instagram.com/ashar_2347/"
+                  : "https://www.instagram.com/dev_ashar_khan/"
               }
               target="_blank"
               rel="noopener noreferrer"
