@@ -411,27 +411,21 @@ const TypingEffectSection = () => {
       </section>
 
       {/* Introduction Section */}
-      {/* <section
-        id="about"
-        className="relative flex flex-col md:flex-row items-start justify-center p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
-      > */}
+
       <section
-  id="about"
-  className="relative flex flex-col md:flex-row items-start justify-center
+        id="about"
+        className="relative flex flex-col md:flex-row items-start justify-center
   px-4 sm:px-6 md:px-12 lg:px-16
   py-12 min-h-screen
   bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950
   text-gray-200 overflow-hidden"
->
-
+      >
         <div className="absolute inset-0 -z-10">
           {/* <div className="absolute w-72 h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
           <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div> */}
-       <div className="absolute w-60 h-60 md:w-72 md:h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
+          <div className="absolute w-60 h-60 md:w-72 md:h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
 
-<div className="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div>
-
-       
+          <div className="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div>
         </div>
 
         <motion.div
@@ -441,12 +435,11 @@ const TypingEffectSection = () => {
           viewport={{ once: true }}
           // className="flex-1 mb-10 md:mb-0 px-4 md:px-8 z-10"
           className="flex-1 mb-10 md:mb-0 md:px-8 z-10"
-
         >
           <h1 className="text-3xl md:text-5xl font-bold text-center md:text-left mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
             Let me <span className="text-cyan-400">introduce</span> myself
           </h1>
-          <p  className="text-lg md:text-xl leading-relaxed text-gray-300 text-center md:text-left">
+          <p className="text-lg md:text-xl leading-relaxed text-gray-300 text-center md:text-left">
             My journey into programming has been incredible full of learning and
             creativity.
             <br />
@@ -485,25 +478,15 @@ const TypingEffectSection = () => {
   mt-8 md:mt-0
   z-10
 "
-
         >
-          {/* <Image
-            src={guyAvatar}
-            width={450}
-            height={450}
-            alt="Avatar"
-            className="rounded-2xl shadow-[0_0_30px_#a855f740] transition-transform hover:scale-105 duration-500"
-          /> */}
-
           <Image
-  src={guyAvatar}
-  alt="Avatar"
-  className="w-[280px] sm:w-[350px] md:w-[450px]
+            src={guyAvatar}
+            alt="Avatar"
+            className="w-[280px] sm:w-[350px] md:w-[450px]
   h-auto rounded-2xl
   shadow-[0_0_30px_#a855f740]
   transition-transform hover:scale-105 duration-500"
-/>
-
+          />
         </motion.div>
       </section>
 
@@ -564,13 +547,24 @@ const TypingEffectSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
+        className="
+    relative
+    flex flex-col
+    items-center
+    justify-center
+    min-h-screen
+    bg-gradient-to-br
+    from-gray-950 via-gray-900 to-gray-950
+    text-gray-200
+    overflow-x-hidden
+    px-4 sm:px-6 md:px-12 lg:px-16
+  "
       >
         <section
           id="projects"
           className="relative flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
         >
-          <div className="container mx-auto px-4 sm:px-6">
+          <div className="w-full max-w-7xl mx-auto">
             <motion.h2
               variants={fadeUp}
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16"
@@ -604,14 +598,23 @@ const TypingEffectSection = () => {
                       <Link
                         href={project.github}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
+                        className="px-3 py-2 sm:px-4 sm:py-2
+      bg-gray-800 rounded-md
+      text-sm sm:text-base font-medium text-white
+      flex items-center justify-center sm:justify-start
+      gap-2 hover:bg-gray-700 transition"
                       >
                         <FaGithub /> GitHub
                       </Link>
+
                       <Link
                         href={project.liveDemo}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+                        className="px-3 py-2 sm:px-4 sm:py-2
+      bg-blue-600 rounded-md
+      text-sm sm:text-base font-medium text-white
+      flex items-center justify-center sm:justify-start
+      gap-2 hover:bg-blue-700 transition"
                       >
                         <FiExternalLink /> Live Demo
                       </Link>
@@ -657,14 +660,23 @@ const TypingEffectSection = () => {
                       <Link
                         href={project.github}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
+                        className="px-3 py-2 sm:px-4 sm:py-2
+      bg-gray-800 rounded-md
+      text-sm sm:text-base font-medium text-white
+      flex items-center justify-center sm:justify-start
+      gap-2 hover:bg-gray-700 transition"
                       >
                         <FaGithub /> GitHub
                       </Link>
+
                       <Link
                         href={project.liveDemo}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
+                        className="px-3 py-2 sm:px-4 sm:py-2
+      bg-blue-600 rounded-md
+      text-sm sm:text-base font-medium text-white
+      flex items-center justify-center sm:justify-start
+      gap-2 hover:bg-blue-700 transition"
                       >
                         <FiExternalLink /> Live Demo
                       </Link>
@@ -931,7 +943,7 @@ const TypingEffectSection = () => {
         </h2>
 
         <motion.div
-          className="flex justify-center flex-wrap gap-6"
+          className="flex justify-center flex-wrap gap-4 sm:gap-6"
           variants={{
             hidden: {},
             visible: {
@@ -978,11 +990,19 @@ const TypingEffectSection = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-center w-16 h-16 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg"
+                className="
+    group flex items-center justify-center
+    w-12 h-12 sm:w-16 sm:h-16
+    rounded-full bg-gray-800 hover:bg-gray-700
+    transition duration-300 ease-in-out shadow-lg
+  "
               >
                 <FontAwesomeIcon
                   icon={social.icon}
-                  className={`w-8 h-8 text-gray-300 group-hover:${social.color}`}
+                  className={`
+    w-6 h-6 sm:w-8 sm:h-8
+    text-gray-300 group-hover:${social.color}
+  `}
                 />
               </Link>
             </motion.div>
