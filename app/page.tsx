@@ -411,13 +411,27 @@ const TypingEffectSection = () => {
       </section>
 
       {/* Introduction Section */}
-      <section
+      {/* <section
         id="about"
         className="relative flex flex-col md:flex-row items-start justify-center p-8 md:p-12 lg:p-16 min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-gray-200 overflow-hidden"
-      >
+      > */}
+      <section
+  id="about"
+  className="relative flex flex-col md:flex-row items-start justify-center
+  px-4 sm:px-6 md:px-12 lg:px-16
+  py-12 min-h-screen
+  bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950
+  text-gray-200 overflow-hidden"
+>
+
         <div className="absolute inset-0 -z-10">
-          <div className="absolute w-72 h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
-          <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div>
+          {/* <div className="absolute w-72 h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div> */}
+       <div className="absolute w-60 h-60 md:w-72 md:h-72 bg-pink-500/10 rounded-full blur-3xl top-10 right-10 animate-pulse"></div>
+
+<div className="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/10 rounded-full blur-3xl bottom-10 left-10 animate-pulse"></div>
+
+       
         </div>
 
         <motion.div
@@ -425,12 +439,14 @@ const TypingEffectSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="flex-1 mb-10 md:mb-0 px-4 md:px-8 z-10"
+          // className="flex-1 mb-10 md:mb-0 px-4 md:px-8 z-10"
+          className="flex-1 mb-10 md:mb-0 md:px-8 z-10"
+
         >
           <h1 className="text-3xl md:text-5xl font-bold text-center md:text-left mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
             Let me <span className="text-cyan-400">introduce</span> myself
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-300">
+          <p  className="text-lg md:text-xl leading-relaxed text-gray-300 text-center md:text-left">
             My journey into programming has been incredible full of learning and
             creativity.
             <br />
@@ -462,15 +478,32 @@ const TypingEffectSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="flex-1 flex justify-center z-10"
+          // className="flex-1 flex justify-center z-10"
+          className="
+  flex-1 flex justify-center items-center
+  w-full
+  mt-8 md:mt-0
+  z-10
+"
+
         >
-          <Image
+          {/* <Image
             src={guyAvatar}
             width={450}
             height={450}
             alt="Avatar"
             className="rounded-2xl shadow-[0_0_30px_#a855f740] transition-transform hover:scale-105 duration-500"
-          />
+          /> */}
+
+          <Image
+  src={guyAvatar}
+  alt="Avatar"
+  className="w-[280px] sm:w-[350px] md:w-[450px]
+  h-auto rounded-2xl
+  shadow-[0_0_30px_#a855f740]
+  transition-transform hover:scale-105 duration-500"
+/>
+
         </motion.div>
       </section>
 
@@ -769,122 +802,120 @@ const TypingEffectSection = () => {
       </motion.section>
 
       <section
-  id="contact"
-  className="
+        id="contact"
+        className="
     bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
     text-gray-200
     px-4 sm:px-6 lg:px-20
     pt-4 pb-10 sm:pt-16 sm:pb-16
   "
->
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
-    Get in <span className="text-blue-500">Touch</span>
-  </h2>
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
-    
-    {/* LEFT SIDE */}
-    <div className="space-y-6 sm:space-y-8">
-      <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
-        Let’s <span className="text-blue-500">Work</span> Together
-      </h3>
-
-      <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
-        I'm currently looking for new opportunities. Whether you have a
-        question or just want to say hi, feel free to reach out. I’ll do
-        my best to get back to you as soon as possible.
-      </p>
-
-      <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
-        <div className="flex items-center gap-3 sm:gap-4">
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            className="text-blue-500 text-lg sm:text-xl"
-          />
-          <span className="text-sm sm:text-base">
-            ashar@innovatesoftwaresolution.com
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3 sm:gap-4">
-          <FontAwesomeIcon
-            icon={faPhone}
-            className="text-blue-500 text-lg sm:text-xl"
-          />
-          <span className="text-sm sm:text-base">+92 317 2597708</span>
-        </div>
-
-        <div className="flex items-center gap-3 sm:gap-4">
-          <FontAwesomeIcon
-            icon={faLocationDot}
-            className="text-blue-500 text-lg sm:text-xl"
-          />
-          <span className="text-sm sm:text-base">Karachi, PK</span>
-        </div>
-      </div>
-    </div>
-
-    {/* RIGHT SIDE FORM */}
-    <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10">
-      <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
-        Send <span className="text-blue-500">Message</span>
-      </h3>
-
-      <form
-        action="https://formspree.io/f/mrbggenw"
-        method="POST"
-        className="space-y-4 sm:space-y-6"
       >
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your Name"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          />
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
+          Get in <span className="text-blue-500">Touch</span>
+        </h2>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
+          {/* LEFT SIDE */}
+          <div className="space-y-6 sm:space-y-8">
+            <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
+              Let’s <span className="text-blue-500">Work</span> Together
+            </h3>
+
+            <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
+              I'm currently looking for new opportunities. Whether you have a
+              question or just want to say hi, feel free to reach out. I’ll do
+              my best to get back to you as soon as possible.
+            </p>
+
+            <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">
+                  ashar@innovatesoftwaresolution.com
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">+92 317 2597708</span>
+              </div>
+
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="text-blue-500 text-lg sm:text-xl"
+                />
+                <span className="text-sm sm:text-base">Karachi, PK</span>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT SIDE FORM */}
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10">
+            <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
+              Send <span className="text-blue-500">Message</span>
+            </h3>
+
+            <form
+              action="https://formspree.io/f/mrbggenw"
+              method="POST"
+              className="space-y-4 sm:space-y-6"
+            >
+              <div>
+                <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your Name"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Your Email"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Your Message"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your Email"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-            Message
-          </label>
-          <textarea
-            name="message"
-            rows={4}
-            required
-            placeholder="Your Message"
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Social Icons Section */}
       <motion.section
