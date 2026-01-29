@@ -768,155 +768,123 @@ const TypingEffectSection = () => {
         </motion.div>
       </motion.section>
 
-      <motion.section
-        id="contact"
-        variants={sectionFade}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="
-  bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
-  text-gray-200
-  px-4 sm:px-6 lg:px-20
-  pt-4 pb-10 sm:pt-16 sm:pb-16
-"
-      >
-        <motion.h2
-          variants={headingAnim}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10"
-        >
-          Get in <span className="text-blue-500">Touch</span>
-        </motion.h2>
+      <section
+  id="contact"
+  className="
+    bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950
+    text-gray-200
+    px-4 sm:px-6 lg:px-20
+    pt-4 pb-10 sm:pt-16 sm:pb-16
+  "
+>
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10">
+    Get in <span className="text-blue-500">Touch</span>
+  </h2>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
-          {/* LEFT SIDE */}
-          <motion.div
-            variants={leftAnim}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="space-y-6 sm:space-y-8"
-          >
-            <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
-              Let’s <span className="text-blue-500">Work</span> Together
-            </h3>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 sm:gap-14 items-start mt-6">
+    
+    {/* LEFT SIDE */}
+    <div className="space-y-6 sm:space-y-8">
+      <h3 className="text-2xl sm:text-3xl text-center md:text-left md:text-4xl font-bold leading-tight">
+        Let’s <span className="text-blue-500">Work</span> Together
+      </h3>
 
-            <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
-              I'm currently looking for new opportunities. Whether you have a
-              question or just want to say hi, feel free to reach out. I’ll do
-              my best to get back to you as soon as possible.
-            </p>
+      <p className="text-base sm:text-lg md:text-lg text-center md:text-left text-gray-400 leading-relaxed max-w-full sm:max-w-xl">
+        I'm currently looking for new opportunities. Whether you have a
+        question or just want to say hi, feel free to reach out. I’ll do
+        my best to get back to you as soon as possible.
+      </p>
 
-            {/* <div className="space-y-4 sm:space-y-5 text-gray-300 "> */}
-            <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
-              <div className="flex items-center gap-3 sm:gap-4 ">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  className="text-blue-500 text-lg sm:text-xl"
-                />
-                <span className="text-sm sm:text-base">
-                  ashar@innovatesoftwaresolution.com
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3 sm:gap-4">
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  className="text-blue-500 text-lg sm:text-xl"
-                />
-                <span className="text-sm sm:text-base">+92 317 2597708</span>
-              </div>
-
-              <div className="flex items-center gap-3 sm:gap-4">
-                <FontAwesomeIcon
-                  icon={faLocationDot}
-                  className="text-blue-500 text-lg sm:text-xl"
-                />
-                <span className="text-sm sm:text-base">Karachi, PK</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* RIGHT SIDE FORM */}
-          <motion.div
-            variants={rightAnim}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10"
-          >
-            <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
-              Send <span className="text-blue-500">Message</span>
-            </h3>
-
-            <motion.form
-              variants={formStagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              action="https://formspree.io/f/mrbggenw"
-              method="POST"
-              className="space-y-4 sm:space-y-6"
-            >
-              <motion.div variants={inputAnim}>
-                <div>
-                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Your Name"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-                  />
-                </div>
-              </motion.div>
-              <motion.div variants={inputAnim}>
-                <div>
-                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Your Email"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-                  />
-                </div>
-              </motion.div>
-
-              <motion.div variants={inputAnim}>
-                <div>
-                  <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    required
-                    placeholder="Your Message"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
-                  ></textarea>
-                </div>
-              </motion.div>
-
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.96 }}
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
-              >
-                Send Message
-              </motion.button>
-            </motion.form>
-          </motion.div>
+      <div className="space-y-4 sm:space-y-5 text-gray-300 flex flex-col items-center md:items-start">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="text-blue-500 text-lg sm:text-xl"
+          />
+          <span className="text-sm sm:text-base">
+            ashar@innovatesoftwaresolution.com
+          </span>
         </div>
-      </motion.section>
+
+        <div className="flex items-center gap-3 sm:gap-4">
+          <FontAwesomeIcon
+            icon={faPhone}
+            className="text-blue-500 text-lg sm:text-xl"
+          />
+          <span className="text-sm sm:text-base">+92 317 2597708</span>
+        </div>
+
+        <div className="flex items-center gap-3 sm:gap-4">
+          <FontAwesomeIcon
+            icon={faLocationDot}
+            className="text-blue-500 text-lg sm:text-xl"
+          />
+          <span className="text-sm sm:text-base">Karachi, PK</span>
+        </div>
+      </div>
+    </div>
+
+    {/* RIGHT SIDE FORM */}
+    <div className="bg-gray-900 border border-gray-800 rounded-2xl shadow-lg shadow-blue-500/20 p-6 sm:p-8 md:p-10">
+      <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold text-center mb-6 sm:mb-8">
+        Send <span className="text-blue-500">Message</span>
+      </h3>
+
+      <form
+        action="https://formspree.io/f/mrbggenw"
+        method="POST"
+        className="space-y-4 sm:space-y-6"
+      >
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Your Name"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your Email"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm sm:text-base font-semibold mb-1 sm:mb-2 text-gray-300">
+            Message
+          </label>
+          <textarea
+            name="message"
+            rows={4}
+            required
+            placeholder="Your Message"
+            className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-md text-gray-200 placeholder-gray-500 focus:ring-2 focus:ring-blue-500 outline-none transition text-sm sm:text-base"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 py-2.5 sm:py-3 rounded-md font-semibold text-white shadow-md hover:shadow-blue-500/40 transition text-sm sm:text-base"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
       {/* Social Icons Section */}
       <motion.section
