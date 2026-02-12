@@ -37,6 +37,7 @@ import ExpenseTracker from "../public/Expense Tracker SS.jpg";
 import job2do from "../public/MYJOB2DO SS.jpg";
 import shinyService from "../public/Claening.png";
 import NextBiz from "../public/NextBitz.png";
+import multiVendor from "../public/multi-vendor.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -85,6 +86,15 @@ const TypingEffectSection = () => {
   ];
 
   const projects = [
+
+     {
+      title: "Multi-Vendor eCommerce Marketplace - Next App",
+      description:
+        "A responsive multi-vendor eCommerce marketplace where sellers manage storefronts and products, and customers browse, filter, and purchase seamlessly. Includes vendor dashboards, secure checkout, and admin controls for easy marketplace management.",
+      image: multiVendor,
+      github: "https://github.com/Asharkhan468/multi-vendor-ecommerce",
+      liveDemo: "https://multi-vendor-ecommerce-mauve.vercel.app/",
+    },
     {
       title: "Shiny Spaces Service - Next App",
       description:
