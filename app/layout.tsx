@@ -12,7 +12,7 @@ const monda = Monda({
 
 
 export const metadata: Metadata = {
-  title: "Ashar Ullah Khan | MERN Stack Developer Portfolio",
+  title: "Ashar Ullah Khan | Software Developer Portfolio",
   description:
     "Explore the professional portfolio of Ashar Ullah Khan — a Full Stack MERN Developer specializing in modern web and mobile application development.",
     
@@ -27,24 +27,25 @@ export const metadata: Metadata = {
     "Freelance Web Developer",
     "Ashar Ullah Khan Website",
     "Professional Portfolio",
+    "Ashar Software Developer"
   ],
   authors: [
     {
       name: "Ashar Ullah Khan",
-      url: "https://practice-nextjs-iota-one.vercel.app/",
+      url: "https://ashar.innovatesoftwaresolution.com/",
     },
   ],
   creator: "Ashar Ullah Khan",
   publisher: "Ashar Ullah Khan",
-  metadataBase: new URL("https://practice-nextjs-iota-one.vercel.app/"),
+  metadataBase: new URL("https://ashar.innovatesoftwaresolution.com/"),
   alternates: {
-    canonical: "https://practice-nextjs-iota-one.vercel.app/",
+    canonical: "https://ashar.innovatesoftwaresolution.com/",
   },
   openGraph: {
     title: "Ashar Ullah Khan | Full Stack Web Developer Portfolio",
     description:
       "Check out the portfolio of Ashar Ullah Khan, a professional MERN Stack Developer specializing in full-stack web and mobile apps.",
-    url: "https://practice-nextjs-iota-one.vercel.app/",
+    url: "https://ashar.innovatesoftwaresolution.com/",
     siteName: "Ashar Ullah Khan Portfolio",
     images: [
       {
