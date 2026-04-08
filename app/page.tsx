@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import guyAvatar from "../public/avatar.webp";
-import avatar from "../public/avatar.png";
+import avatar from "../public/My image.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -33,11 +33,14 @@ import noonWeb from "../public/noon-website.png";
 import passwordGenerator from "../public/password-generator.png";
 import currencyConverter from "../public/currency-converter.png";
 import saltAndPepper from "../public/salt-and-peper.png";
-import ExpenseTracker from "../public/Expense Tracker SS.jpg";
-import job2do from "../public/MYJOB2DO SS.jpg";
+// import ExpenseTracker from "../public/Expense Tracker SS.jpg";
+// import job2do from "../public/MYJOB2DO SS.jpg";
 import shinyService from "../public/Claening.png";
 import NextBiz from "../public/NextBitz.png";
 import multiVendor from "../public/multi-vendor.png";
+import realEstate from "../public/real-estate.png";
+import CleanPro from "../public/cleaning-pro.png";
+import CleanProAdmin from "../public/cleanPro-admin.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -86,8 +89,7 @@ const TypingEffectSection = () => {
   ];
 
   const projects = [
-
-     {
+    {
       title: "Multi-Vendor eCommerce Marketplace - Next App",
       description:
         "A responsive multi-vendor eCommerce marketplace where sellers manage storefronts and products, and customers browse, filter, and purchase seamlessly. Includes vendor dashboards, secure checkout, and admin controls for easy marketplace management.",
@@ -95,6 +97,31 @@ const TypingEffectSection = () => {
       github: "https://github.com/Asharkhan468/multi-vendor-ecommerce",
       liveDemo: "https://multi-vendor-ecommerce-mauve.vercel.app/",
     },
+    {
+      title: "CleanPro – Professional Cleaning Service Website",
+      description:
+        "A modern and responsive cleaning service website showcasing services with a clean design and smooth user experience. Built to improve online presence and help users easily explore and book services.",
+      image: CleanPro,
+      github: "https://github.com/Asharkhan468/cleanpro-system",
+      liveDemo: "https://cleanpro-system-7p8j.vercel.app/",
+    },
+    {
+      title: "CleanPro – Admin Dashboard",
+      description:
+        "A simple admin dashboard to manage services, bookings, and users efficiently. Designed for smooth workflow and easy control of the platform.",
+      image: CleanProAdmin,
+      github: "https://github.com/Asharkhan468/cleanpro-system",
+      liveDemo: "https://cleanpro-system-7p8j.vercel.app/admin",
+    },
+    {
+      title: "Real Estate Listing Platform",
+      description:
+        "A modern and responsive real estate listing web app designed to showcase properties with a clean UI, smooth navigation, and user-friendly browsing experience. Includes property search, filtering, and optimized layout for better user engagement and conversions.",
+      image: realEstate,
+      github: "https://github.com/Asharkhan468/real-state-listings",
+      liveDemo: "https://real-state-listings-delta.vercel.app/",
+    },
+
     {
       title: "Shiny Spaces Service - Next App",
       description:
@@ -186,26 +213,26 @@ const TypingEffectSection = () => {
     },
   ];
 
-  const mobileProjects = [
-    {
-      title: "MYJOB2Do – Service Marketplace App",
-      description:
-        "A React Native app connecting users and service providers with secure chat and Stripe payments.",
-      github: "#",
-      liveDemo:
-        "https://drive.google.com/file/d/1ZSVUR2RT0tWykZAqXYdYO00tkMrrEYhX/view?usp=drive_link",
-      image: job2do,
-    },
-    {
-      title: "Expense Tracker – React Native App",
-      description:
-        "A mobile app to manage personal expenses with categorization and charts using local state management.",
-      github: "https://github.com/Asharkhan468/Expense",
-      liveDemo:
-        "https://drive.google.com/file/d/1AWV3GmRb2YnNOiPgO8TwxNcQaAR6TM-C/view?usp=drive_link",
-      image: ExpenseTracker,
-    },
-  ];
+  // const mobileProjects = [
+  //   {
+  //     title: "MYJOB2Do – Service Marketplace App",
+  //     description:
+  //       "A React Native app connecting users and service providers with secure chat and Stripe payments.",
+  //     github: "#",
+  //     liveDemo:
+  //       "https://drive.google.com/file/d/1ZSVUR2RT0tWykZAqXYdYO00tkMrrEYhX/view?usp=drive_link",
+  //     image: job2do,
+  //   },
+  //   {
+  //     title: "Expense Tracker – React Native App",
+  //     description:
+  //       "A mobile app to manage personal expenses with categorization and charts using local state management.",
+  //     github: "https://github.com/Asharkhan468/Expense",
+  //     liveDemo:
+  //       "https://drive.google.com/file/d/1AWV3GmRb2YnNOiPgO8TwxNcQaAR6TM-C/view?usp=drive_link",
+  //     image: ExpenseTracker,
+  //   },
+  // ];
 
   const sectionFade: Variants = {
     hidden: { opacity: 0 },
@@ -344,17 +371,30 @@ const TypingEffectSection = () => {
               }}
               onInit={(typewriter) => {
                 typewriter
-                  .typeString("Software Engineer")
+                  .typeString("Website Developer")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Helping Businesses Grow Online")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Turning Visitors into Customers")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Building High-Converting Websites")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Your Business Needs a Better Website")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("I Fix Slow & Outdated Websites")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Design That Brings You Clients")
                   .pauseFor(2000)
                   .deleteAll()
                   .typeString("Full Stack Developer")
                   .pauseFor(2000)
                   .deleteAll()
-                  .typeString("Freelancer")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Web & Mobile App Developer")
-                  .pauseFor(2000)
                   .start();
               }}
             />
@@ -410,8 +450,16 @@ const TypingEffectSection = () => {
           transition={{ duration: 1 }}
           className="flex-1 flex justify-center z-10"
         >
-          <Image
+          {/* <Image
             className="rounded-2xl transition-transform hover:scale-105 duration-500 h-[380px] w-[350px]"
+            src={avatar}
+            width={350}
+            height={350}
+            alt="Developer"
+          /> */}
+
+          <Image
+            className="rounded-full object-cover transition-transform hover:scale-105 duration-500 h-[350px] w-[350px]"
             src={avatar}
             width={350}
             height={350}
@@ -588,7 +636,7 @@ const TypingEffectSection = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
+                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
                 >
                   <Image
                     src={project.image}
@@ -597,22 +645,24 @@ const TypingEffectSection = () => {
                     width={400}
                     height={400}
                   />
-                  <div className="p-4 sm:p-6">
+
+                  {/* Content */}
+                  <div className="p-4 sm:p-6 flex flex-col flex-grow">
                     <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
+
+                    {/* Description with fixed height */}
+                    <p className="text-gray-400 text-sm sm:text-base line-clamp-3 mb-4">
                       {project.description}
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
+
+                    {/* Push buttons to bottom */}
+                    <div className="mt-auto flex justify-between items-center">
                       <Link
                         href={project.github}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2
-      bg-gray-800 rounded-md
-      text-sm sm:text-base font-medium text-white
-      flex items-center justify-center sm:justify-start
-      gap-2 hover:bg-gray-700 transition"
+                        className="px-4 py-2 bg-gray-800 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-gray-700 transition"
                       >
                         <FaGithub /> GitHub
                       </Link>
@@ -620,11 +670,7 @@ const TypingEffectSection = () => {
                       <Link
                         href={project.liveDemo}
                         target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2
-      bg-blue-600 rounded-md
-      text-sm sm:text-base font-medium text-white
-      flex items-center justify-center sm:justify-start
-      gap-2 hover:bg-blue-700 transition"
+                        className="px-4 py-2 bg-blue-600 rounded-md text-sm sm:text-base font-medium text-white flex items-center gap-2 hover:bg-blue-700 transition"
                       >
                         <FiExternalLink /> Live Demo
                       </Link>
@@ -633,68 +679,6 @@ const TypingEffectSection = () => {
                 </div>
               ))}
             </motion.div>
-
-            {/* Mobile Projects */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 sm:mt-24 mb-12 sm:mb-16">
-              Mobile <span className="text-blue-500">Applications</span>
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-              {mobileProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1 sm:hover:-translate-y-2 transition-all duration-500"
-                >
-                  {/* Mobile preview container */}
-                  <div className="flex justify-center items-center bg-gray-950 py-4 sm:py-6">
-                    <div className="relative w-36 sm:w-44 md:w-48 h-72 sm:h-80 md:h-96 rounded-3xl border-4 border-gray-800 shadow-inner overflow-hidden bg-black">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                        width={300}
-                        height={600}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Project details */}
-                  <div className="p-4 sm:p-5">
-                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4 sm:mb-5 text-sm sm:text-base leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-0">
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2
-      bg-gray-800 rounded-md
-      text-sm sm:text-base font-medium text-white
-      flex items-center justify-center sm:justify-start
-      gap-2 hover:bg-gray-700 transition"
-                      >
-                        <FaGithub /> GitHub
-                      </Link>
-
-                      <Link
-                        href={project.liveDemo}
-                        target="_blank"
-                        className="px-3 py-2 sm:px-4 sm:py-2
-      bg-blue-600 rounded-md
-      text-sm sm:text-base font-medium text-white
-      flex items-center justify-center sm:justify-start
-      gap-2 hover:bg-blue-700 transition"
-                      >
-                        <FiExternalLink /> Live Demo
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
       </motion.section>
