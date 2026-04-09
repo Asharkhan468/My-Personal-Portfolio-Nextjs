@@ -371,30 +371,16 @@ const TypingEffectSection = () => {
               }}
               onInit={(typewriter) => {
                 typewriter
-                  .typeString("Website Developer")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Helping Businesses Grow Online")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Turning Visitors into Customers")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Building High-Converting Websites")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Your Business Needs a Better Website")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("I Fix Slow & Outdated Websites")
-                  .pauseFor(2000)
-                  .deleteAll()
-                  .typeString("Design That Brings You Clients")
+                  .typeString("Software Engineer")
                   .pauseFor(2000)
                   .deleteAll()
                   .typeString("Full Stack Developer")
                   .pauseFor(2000)
                   .deleteAll()
+                  .typeString("Web App Developer")
+                  .pauseFor(2000)
+                  .deleteAll()
+
                   .start();
               }}
             />
