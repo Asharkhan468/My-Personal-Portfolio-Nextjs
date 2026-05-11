@@ -22,9 +22,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import Typewriter from "typewriter-effect";
-
-import developer from "../public/about-page-image.webp";
-import weatherAppImg from "../public/weather-app.png";
 import buySellWebsite from "../public/buy-sell-website.png";
 import quizAppImg from "../public/quiz-app.png";
 import blogApppImg from "../public/blog-app.png";
@@ -33,14 +30,13 @@ import noonWeb from "../public/noon-website.png";
 import passwordGenerator from "../public/password-generator.png";
 import currencyConverter from "../public/currency-converter.png";
 import saltAndPepper from "../public/salt-and-peper.png";
-// import ExpenseTracker from "../public/Expense Tracker SS.jpg";
-// import job2do from "../public/MYJOB2DO SS.jpg";
 import shinyService from "../public/Claening.png";
 import NextBiz from "../public/NextBitz.png";
 import multiVendor from "../public/multi-vendor.png";
 import realEstate from "../public/real-estate.png";
 import CleanPro from "../public/cleaning-pro.png";
 import CleanProAdmin from "../public/cleanPro-admin.png";
+import Roofing from "../public/roofing.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -48,7 +44,6 @@ import {
   FaReact,
   FaNode,
   FaGitAlt,
-  FaPython,
   FaGithub,
 } from "react-icons/fa";
 import {
@@ -89,6 +84,15 @@ const TypingEffectSection = () => {
   ];
 
   const projects = [
+    {
+      title: "Professional Roofing Website",
+      description:
+        "A fully responsive and modern roofing service website designed to showcase services, projects, and company credibility. It includes a clean UI, service sections, project highlights, and contact integration to help generate leads and build trust with potential clients.",
+
+      image: Roofing,
+      github: "https://github.com/Asharkhan468/Roofing-website",
+      liveDemo: "https://roofing-website-xi.vercel.app/",
+    },
     {
       title: "Multi-Vendor eCommerce Marketplace - Next App",
       description:
@@ -138,14 +142,7 @@ const TypingEffectSection = () => {
       github: "https://github.com/Asharkhan468/Blogging-App-React-js",
       liveDemo: "https://blogging-app-react-js-henna.vercel.app/",
     },
-    {
-      title: "Weather App",
-      description:
-        "A responsive weather app providing real-time global weather updates using JavaScript and API integration.",
-      image: weatherAppImg,
-      github: "https://github.com/Asharkhan468/Weather-App",
-      liveDemo: "https://myweatherforcastapp.netlify.app/",
-    },
+
     {
       title: "NextBiz - Next App",
       description:
@@ -380,7 +377,6 @@ const TypingEffectSection = () => {
                   .typeString("Web App Developer")
                   .pauseFor(2000)
                   .deleteAll()
-
                   .start();
               }}
             />
