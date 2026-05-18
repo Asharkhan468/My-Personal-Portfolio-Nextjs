@@ -358,7 +358,7 @@ const TypingEffectSection = () => {
               Ashar Ullah Khan
             </span>
           </h2>
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold h-10 text-green-400 mb-6">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-green-400 mb-6">
             <Typewriter
               options={{
                 delay: 90,
@@ -374,7 +374,10 @@ const TypingEffectSection = () => {
                   .typeString("Full Stack Developer")
                   .pauseFor(2000)
                   .deleteAll()
-                  .typeString("Web App Developer")
+                  .typeString("Website & Automation Developer")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .typeString("Automate Businessess For Better Results")
                   .pauseFor(2000)
                   .deleteAll()
                   .start();
@@ -383,7 +386,7 @@ const TypingEffectSection = () => {
           </h3>
 
           {/* Social Icons */}
-          <div className="flex gap-6 mt-4">
+          <div className="flex gap-6 mt-6">
             {[
               {
                 href: "https://github.com/Asharkhan468",
@@ -432,14 +435,6 @@ const TypingEffectSection = () => {
           transition={{ duration: 1 }}
           className="flex-1 flex justify-center z-10"
         >
-          {/* <Image
-            className="rounded-2xl transition-transform hover:scale-105 duration-500 h-[380px] w-[350px]"
-            src={avatar}
-            width={350}
-            height={350}
-            alt="Developer"
-          /> */}
-
           <Image
             className="rounded-full object-cover transition-transform hover:scale-105 duration-500 h-[350px] w-[350px]"
             src={avatar}
