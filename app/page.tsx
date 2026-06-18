@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import guyAvatar from "../public/avatar.webp";
-import avatar from "../public/My image.jpg";
+import avatar from "../public/My-whatsapp-image.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -60,6 +60,7 @@ import {
   SiFastapi,
 } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
+import Chatbot from "@/components/ChatBot";
 
 const TypingEffectSection = () => {
   const skills = [
@@ -980,6 +981,7 @@ const TypingEffectSection = () => {
           ))}
         </motion.div>
       </motion.section>
+      <Chatbot/>
     </>
   );
 };
