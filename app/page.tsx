@@ -37,6 +37,7 @@ import realEstate from "../public/real-estate.png";
 import CleanPro from "../public/cleaning-pro.png";
 import CleanProAdmin from "../public/cleanPro-admin.png";
 import Roofing from "../public/roofing.png";
+import ResumeAnalyzer from "../public/ResumeAI.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -85,6 +86,15 @@ const TypingEffectSection = () => {
   ];
 
   const projects = [
+    {
+      title: "AI Resume Analyzer Chatbot",
+      description:
+        "An AI-powered Resume Analyzer that allows users to upload their resume and interact with an intelligent chatbot to receive personalized feedback, skill analysis, and career recommendations. Built using Next.js, FastAPI, Google Gemini AI, ChromaDB, and RAG (Retrieval-Augmented Generation) for accurate, context-aware responses from uploaded resume content",
+
+      image: ResumeAnalyzer,
+      github: "https://github.com/Asharkhan468/Resume-Analyzer",
+      liveDemo: "https://resume-analyzer-bay-six.vercel.app/",
+    },
     {
       title: "Professional Roofing Website",
       description:
