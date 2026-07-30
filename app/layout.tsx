@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Monda } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 
-const monda = Monda({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "700"],
-  variable: "--font-monda",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Ashar Ullah Khan | Software Developer Portfolio",
+  title: "Ashar Ullah Khan | Senior Full Stack & AI Developer Portfolio",
   description:
-    "Explore the professional portfolio of Ashar Ullah Khan — a Full Stack MERN Developer specializing in modern web and mobile application development.",
+    "Explore the professional portfolio of Ashar Ullah Khan — Senior Full Stack MERN & AI Chatbot Developer specializing in high-performance web applications, RAG systems, and digital automation.",
     
   keywords: [
     "Ashar Ullah Khan",
     "Ashar Portfolio",
+    "AI Chatbot Developer",
     "MERN Stack Developer",
     "Full Stack Web Developer",
     "React Developer",
     "Next.js Developer",
-    "Web Developer in Pakistan",
+    "FastAPI RAG Developer",
+    "Web Developer Pakistan",
     "Freelance Web Developer",
-    "Ashar Ullah Khan Website",
-    "Professional Portfolio",
-    "Ashar Software Developer"
+    "Senior Full Stack Developer"
   ],
   authors: [
     {
@@ -42,9 +46,9 @@ export const metadata: Metadata = {
     canonical: "https://ashar.innovatesoftwaresolution.com/",
   },
   openGraph: {
-    title: "Ashar Ullah Khan | Full Stack Web Developer Portfolio",
+    title: "Ashar Ullah Khan | Full Stack & AI Developer Portfolio",
     description:
-      "Check out the portfolio of Ashar Ullah Khan, a professional MERN Stack Developer specializing in full-stack web and mobile apps.",
+      "Check out the portfolio of Ashar Ullah Khan, a professional MERN & AI Developer specializing in full-stack web, AI Chatbots, and mobile apps.",
     url: "https://ashar.innovatesoftwaresolution.com/",
     siteName: "Ashar Ullah Khan Portfolio",
     images: [
@@ -60,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ashar Ullah Khan | Web Developer",
+    title: "Ashar Ullah Khan | Senior Full Stack & AI Developer",
     description:
-      "Explore the portfolio of MERN Stack Developer Ashar Ullah Khan.",
+      "Explore the portfolio of Full Stack & AI Chatbot Developer Ashar Ullah Khan.",
     images: [
       "https://firebasestorage.googleapis.com/v0/b/image-to-url-converter-9483c.appspot.com/o/anonymous%40gmail.com%20%2B%201753123017625?alt=media&token=b658759c-25da-4c4e-a989-a0c8692ebcea",
     ],
@@ -75,9 +79,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={` ${monda.variable} antialiased  scrollbar-hide bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900 text-gray-200 font-monda `}
+        className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased bg-[#09090B] text-slate-100 selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden`}
       >
         <Navbar />
         {children}
@@ -85,3 +89,4 @@ export default function RootLayout({
     </html>
   );
 }
+

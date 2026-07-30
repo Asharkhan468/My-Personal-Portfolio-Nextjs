@@ -1,4 +1,3 @@
-// components/Chatbot.tsx
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -64,7 +63,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hello! 👋 I'm Ashar's AI assistant. How can I help you today? Feel free to ask about my skills, projects, or experience!",
+      text: "Hello! 👋 I'm Ashar's AI assistant. Ask me anything about Ashar's AI Chatbot development, MERN Stack projects, background, or availability!",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -75,12 +74,10 @@ const Chatbot: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll to bottom of messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Focus input when chat opens
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 300);
@@ -96,7 +93,6 @@ const Chatbot: React.FC = () => {
 
     const messageContent = input.trim();
 
-    // Add user message
     const userMessage: Message = {
       id: messages.length + 1,
       text: messageContent,
@@ -108,7 +104,6 @@ const Chatbot: React.FC = () => {
     setIsTyping(true);
 
     try {
-      // Call the API with the user's message
       const aiResponse = await sendMessageToAPI(messageContent, clientId);
 
       const botMessage: Message = {
@@ -119,10 +114,9 @@ const Chatbot: React.FC = () => {
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      // Handle error - show error message in chat
       const errorMessage: Message = {
         id: messages.length + 2,
-        text: "Sorry, I'm having trouble connecting to the AI service. Please try again later. 😅",
+        text: "Sorry, I'm having trouble connecting to the AI service right now. Please feel free to send a direct message in the contact form below! 😅",
         sender: "bot",
         timestamp: new Date(),
       };
@@ -141,124 +135,115 @@ const Chatbot: React.FC = () => {
 
   return (
     <>
-      {/* Chat Button with Attractive Design */}
+      {/* Floating Chat Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        {/* Pulse Ring Animation */}
         <motion.div
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-30"
+          className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-violet-600 opacity-40 blur-md"
           animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0, 0.3],
+            scale: [1, 1.35, 1],
+            opacity: [0.4, 0.1, 0.4],
           }}
           transition={{
-            duration: 2,
+            duration: 2.5,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-
-        {/* Main Button */}
         <motion.button
           onClick={toggleChat}
-          className="relative w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white shadow-2xl shadow-blue-500/50 flex items-center justify-center transition-all duration-300 group"
-          whileHover={{ 
-            scale: 1.15,
-            boxShadow: "0 0 40px rgba(0, 200, 255, 0.6)",
-          }}
-          whileTap={{ scale: 0.9 }}
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ 
-            scale: 1, 
-            rotate: 0,
-            transition: { 
-              type: "spring", 
-              stiffness: 260, 
-              damping: 20 
-            }
-          }}
+          className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-violet-600 text-white shadow-xl shadow-blue-600/30 flex items-center justify-center border border-white/20 group hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300"
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ scale: 0, rotate: -90 }}
+          animate={{ scale: 1, rotate: 0 }}
         >
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-          
-          {/* Icon with rotation */}
           <motion.div
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
+            animate={{ rotate: isOpen ? 90 : 0 }}
+            transition={{ duration: 0.2 }}
             className="relative z-10"
           >
-            <FontAwesomeIcon 
-              icon={isOpen ? faTimes : faComments} 
-              className="w-7 h-7" 
+            <FontAwesomeIcon
+              icon={isOpen ? faTimes : faComments}
+              className="w-6 h-6 text-white"
             />
           </motion.div>
 
-          {/* Hover tooltip */}
-          <span className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-gray-700">
-            {isOpen ? "Close chat" : "Lets Chat"}
+          <span className="absolute -top-10 right-0 bg-[#111827] text-slate-200 text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap border border-white/10 shadow-lg pointer-events-none">
+            {isOpen ? "Close Assistant" : "Ask AI Assistant"}
           </span>
         </motion.button>
 
-        {/* Chat Window */}
+        {/* Chat Window Drawer */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              initial={{ opacity: 0, y: 20, scale: 0.94 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              className="fixed bottom-24 right-6 z-50 w-[90vw] sm:w-96 max-w-full bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl shadow-blue-500/20 overflow-hidden"
+              exit={{ opacity: 0, y: 20, scale: 0.94 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 bg-[#09090B]/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl shadow-black overflow-hidden"
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-cyan-600 to-blue-700 px-4 py-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                  <FontAwesomeIcon icon={faRobot} className="w-4 h-4 text-white" />
+              <div className="bg-gradient-to-r from-blue-600/30 via-indigo-600/20 to-violet-600/30 border-b border-white/10 px-5 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-blue-500 to-violet-600 flex items-center justify-center shadow-md">
+                    <FontAwesomeIcon icon={faRobot} className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-sm tracking-wide flex items-center gap-1.5">
+                      <span>Ashar's AI Assistant</span>
+                      <span className="text-xs text-blue-400 bg-blue-500/10 border border-blue-500/20 px-1.5 py-0.5 rounded">RAG</span>
+                    </h3>
+                    <p className="text-slate-400 text-xs flex items-center gap-1.5 mt-0.5">
+                      <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                      Active • RAG & Gemini Powered
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-white font-semibold text-sm">
-                    Ashar's AI Assistant
-                  </h3>
-                  <p className="text-white/70 text-xs flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full inline-block animate-pulse"></span>
-                    Online • AI Powered
-                  </p>
-                </div>
+
+                <button
+                  onClick={toggleChat}
+                  className="p-1.5 text-slate-400 hover:text-white rounded-full hover:bg-white/10 transition"
+                >
+                  <FontAwesomeIcon icon={faTimes} className="w-4 h-4" />
+                </button>
               </div>
 
-              {/* Messages */}
-              <div className="h-80 overflow-y-auto p-4 bg-gray-900/50 space-y-3">
+              {/* Messages Area */}
+              <div className="h-80 overflow-y-auto p-4 space-y-3.5 bg-[#09090B]/80 scrollbar-thin">
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
-                    className={`flex items-start gap-2 ${
+                    className={`flex items-start gap-2.5 ${
                       msg.sender === "user" ? "flex-row-reverse" : ""
                     }`}
                   >
                     <div
-                      className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center ${
+                      className={`w-7 h-7 rounded-xl flex-shrink-0 flex items-center justify-center ${
                         msg.sender === "user"
-                          ? "bg-gradient-to-r from-cyan-500 to-blue-500"
-                          : "bg-gradient-to-r from-cyan-500 to-blue-500"
+                          ? "bg-blue-600 text-white"
+                          : "bg-white/10 text-blue-400 border border-white/10"
                       }`}
                     >
                       <FontAwesomeIcon
                         icon={msg.sender === "user" ? faUser : faRobot}
-                        className="w-3.5 h-3.5 text-white"
+                        className="w-3.5 h-3.5"
                       />
                     </div>
                     <div
-                      className={`max-w-[75%] px-3 py-2 rounded-xl ${
+                      className={`max-w-[78%] px-4 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                         msg.sender === "user"
-                          ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white"
-                          : "bg-gray-800 text-gray-200 border border-gray-700"
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-tr-none shadow-md shadow-blue-500/10"
+                          : "bg-[#111827] text-slate-200 border border-white/10 rounded-tl-none"
                       }`}
                     >
-                      <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
+                      <p className="whitespace-pre-wrap">{msg.text}</p>
                       <p
-                        className={`text-[10px] mt-1 ${
+                        className={`text-[10px] mt-1 text-right ${
                           msg.sender === "user"
-                            ? "text-white/60"
-                            : "text-gray-400"
+                            ? "text-blue-200/70"
+                            : "text-slate-500"
                         }`}
                       >
                         {msg.timestamp.toLocaleTimeString([], {
@@ -269,16 +254,17 @@ const Chatbot: React.FC = () => {
                     </div>
                   </div>
                 ))}
+
                 {isTyping && (
-                  <div className="flex items-start gap-2">
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center">
-                      <FontAwesomeIcon icon={faRobot} className="w-3.5 h-3.5 text-white" />
+                  <div className="flex items-start gap-2.5">
+                    <div className="w-7 h-7 rounded-xl bg-white/10 text-blue-400 border border-white/10 flex items-center justify-center">
+                      <FontAwesomeIcon icon={faRobot} className="w-3.5 h-3.5" />
                     </div>
-                    <div className="bg-gray-800 px-4 py-2 rounded-xl border border-gray-700">
-                      <div className="flex gap-1">
-                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
-                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
-                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
+                    <div className="bg-[#111827] px-4 py-3 rounded-2xl rounded-tl-none border border-white/10">
+                      <div className="flex gap-1.5 items-center">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }}></span>
+                        <span className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }}></span>
+                        <span className="w-2 h-2 bg-violet-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }}></span>
                       </div>
                     </div>
                   </div>
@@ -286,8 +272,8 @@ const Chatbot: React.FC = () => {
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Input */}
-              <div className="p-3 border-t border-gray-700 bg-gray-900">
+              {/* Input Area */}
+              <div className="p-3 border-t border-white/10 bg-[#09090B]">
                 <div className="flex items-center gap-2">
                   <input
                     ref={inputRef}
@@ -295,24 +281,24 @@ const Chatbot: React.FC = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Ask me anything..."
+                    placeholder="Ask about AI Chatbots or MERN apps..."
                     disabled={isTyping}
-                    className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-cyan-500 transition disabled:opacity-50"
+                    className="flex-1 px-4 py-2.5 bg-[#111827] border border-white/10 rounded-2xl text-slate-100 placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-blue-500/60 transition disabled:opacity-50"
                   />
                   <button
                     onClick={handleSendMessage}
                     disabled={!input.trim() || isTyping}
-                    className="w-9 h-9 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center text-white hover:shadow-lg hover:shadow-blue-500/30 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-10 h-10 bg-gradient-to-r from-blue-600 to-violet-600 rounded-2xl flex items-center justify-center text-white hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-blue-600/20"
                   >
                     {isTyping ? (
                       <FontAwesomeIcon icon={faSpinner} className="w-4 h-4 animate-spin" />
                     ) : (
-                      <FontAwesomeIcon icon={faPaperPlane} className="w-4 h-4" />
+                      <FontAwesomeIcon icon={faPaperPlane} className="w-3.5 h-3.5" />
                     )}
                   </button>
                 </div>
-                <p className="text-[10px] text-gray-500 mt-1.5 text-center">
-                  Ask about skills, projects, experience, or anything! 🤖
+                <p className="text-[10px] text-slate-500 mt-2 text-center">
+                  Instant answers powered by Ashar's AI knowledge base
                 </p>
               </div>
             </motion.div>
