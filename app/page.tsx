@@ -493,7 +493,7 @@ export default function PortfolioPage() {
                     { href: "https://github.com/Asharkhan468", icon: faGithub, label: "GitHub" },
                     { href: "https://www.linkedin.com/in/ashar-ullah-khan-644a20374/", icon: faLinkedin, label: "LinkedIn" },
                     { href: "https://www.instagram.com/dev_ashar_khan/", icon: faInstagram, label: "Instagram" },
-                    { href: "mailto:ashar@innovatesoftwaresolution.com", icon: faEnvelope, label: "Email" },
+                    { href: "mailto:asharullah.khan2468@gmail.com", icon: faEnvelope, label: "Email" },
                   ].map((social, i) => (
                     <a
                       key={i}
@@ -972,7 +972,7 @@ export default function PortfolioPage() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-400">Email Address</div>
-                    <div className="text-sm font-semibold text-white">ashar@innovatesoftwaresolution.com</div>
+                    <div className="text-sm font-semibold text-white">asharullah.khan2468@gmail.com</div>
                   </div>
                 </a>
 
