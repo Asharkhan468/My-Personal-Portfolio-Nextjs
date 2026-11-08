@@ -1,0 +1,154 @@
+:root {
+  --motion-duration-fast: 180ms;
+  --motion-duration-standard: 420ms;
+  --motion-duration-slow: 680ms;
+  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-distance-small: 12px;
+  --motion-distance-medium: 20px;
+  --motion-stagger-step: 55ms;
+  --motion-hover-distance: 4px;
+}
+
+
+
+.form-field select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 14px 44px 14px 16px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+
+  background-color: var(--input-background);
+  color: var(--text-color);
+
+  font: inherit;
+  font-size: 15px;
+
+  cursor: pointer;
+
+  /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+}
+
+.reveal-ready:not(.is-visible),
+.stagger-ready > .stagger-item:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, var(--motion-distance-small), 0);
+}
+
+.reveal,
+.stagger-item {
+  transition:
+    opacity var(--motion-duration-standard) var(--motion-ease-standard),
+    transform var(--motion-duration-standard) var(--motion-ease-standard);
+}
+
+.reveal.is-visible,
+.stagger-ready > .stagger-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.stagger-ready > .stagger-item {
+  transition-delay: calc(var(--stagger-index, 0) * var(--motion-stagger-step));
+}
+
+.hero-copy > * {
+  animation: hero-enter var(--motion-duration-slow) var(--motion-ease-standard) both;
+}
+
+.hero-copy > :nth-child(2) { animation-delay: 50ms; }
+.hero-copy > :nth-child(3) { animation-delay: 110ms; }
+.hero-copy > :nth-child(4) { animation-delay: 170ms; }
+.hero-copy > :nth-child(5) { animation-delay: 240ms; }
+.hero-visual { animation: hero-enter var(--motion-duration-slow) var(--motion-ease-standard) 120ms both; }
+.hero-orbit-one { animation: orbit-drift 18s ease-in-out infinite alternate; }
+.hero-orbit-two { animation: orbit-drift 22s ease-in-out infinite alternate-reverse; }
+.ecosystem-card-web { animation: card-float 8s ease-in-out infinite; }
+.ecosystem-card-mobile { animation: card-float 9s ease-in-out -2s infinite; }
+.ecosystem-card-automation { animation: card-float 8.5s ease-in-out -4s infinite; }
+.connection-path { animation: data-flow 8s linear infinite; }
+.connection-path-two { animation-delay: -2s; }
+.connection-path-three { animation-delay: -4s; }
+.connection-path-four { animation-delay: -6s; }
+.core-orbit-one { animation: core-rotate 32s linear infinite; }
+.core-disc { animation: core-float 7s ease-in-out infinite; }
+.core-signal-one { animation: signal-orbit 8s linear infinite; }
+.core-signal-two { animation: signal-orbit 11s linear -4s infinite reverse; }
+.workflow-connector i { animation: workflow-pulse 3.6s ease-in-out infinite; }
+.workflow-connector:nth-of-type(4) i { animation-delay: -1.8s; }
+
+.service-card .service-icon,
+.project-image-arrow,
+.project-actions svg,
+.button svg,
+.text-link svg {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.service-card:hover .service-icon { transform: translateY(-2px) rotate(-4deg); }
+.project-image-link:hover .project-image { transform: scale(1.035); }
+.project-image-arrow { transition: transform var(--motion-duration-fast) var(--motion-ease-standard), background var(--motion-duration-fast) ease; }
+.project-image-link:hover .project-image-arrow { transform: translate(2px, -2px); background: var(--color-accent-strong); }
+.project-card { transition: border-color var(--motion-duration-fast) ease, transform var(--motion-duration-standard) var(--motion-ease-standard); }
+.project-card:hover { transform: translateY(-3px); border-color: var(--color-border-strong); }
+.project-content h3 { transition: color var(--motion-duration-fast) ease, transform var(--motion-duration-fast) var(--motion-ease-standard); }
+.project-card:hover .project-content h3 { transform: translateX(2px); color: var(--color-accent-soft); }
+.project-actions a:hover svg,
+.button:hover svg { transform: translate(2px, -1px); }
+.service-card { transition-duration: var(--motion-duration-standard); }
+
+.nav-dropdown {
+  transform-origin: top left;
+  animation: dropdown-enter var(--motion-duration-fast) var(--motion-ease-standard) both;
+}
+.mobile-nav { animation: dropdown-enter var(--motion-duration-standard) var(--motion-ease-standard) both; }
+
+@keyframes hero-enter {
+  from { opacity: 0.72; transform: translate3d(0, var(--motion-distance-small), 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes orbit-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-12px, 8px, 0) scale(1.025); }
+}
+
+@keyframes data-flow { to { stroke-dashoffset: -44; } }
+@keyframes card-float { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -5px, 0); } }
+@keyframes core-rotate { to { transform: rotate(360deg); } }
+@keyframes core-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes signal-orbit { from { transform: translate(-50%, -50%) rotate(0deg) translateX(var(--signal-radius, 5.2rem)); } to { transform: translate(-50%, -50%) rotate(360deg) translateX(var(--signal-radius, 5.2rem)); } }
+@keyframes workflow-pulse { 0%, 100% { left: 10%; opacity: 0.45; } 50% { left: 82%; opacity: 1; } }
+
+@keyframes dropdown-enter {
+  from { opacity: 0; transform: translate3d(0, -6px, 0) scale(0.99); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready:not(.is-visible),
+  .stagger-ready > .stagger-item:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal,
+  .stagger-item,
+  .hero-copy > *,
+  .hero-visual,
+  .hero-orbit-one,
+  .hero-orbit-two,
+  .nav-dropdown,
+  .mobile-nav {
+    animation: none !important;
+    transition: none !important;
+  }
+}

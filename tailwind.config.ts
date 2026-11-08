@@ -1,4 +1,3 @@
-import { text } from "stream/consumers";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -11,45 +10,50 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "var(--color-background)",
+        foreground: "var(--color-text)",
+        surface: "var(--color-surface)",
+        "surface-raised": "var(--color-surface-raised)",
+        accent: "var(--color-accent)",
+        "accent-soft": "var(--color-accent-soft)",
+        "text-primary": "var(--color-text)",
+        "text-muted": "var(--color-text-muted)",
+        "text-subtle": "var(--color-text-subtle)",
+        "border-token": "var(--color-border)",
+        success: "var(--color-success)",
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--color-surface)",
+          foreground: "var(--color-text)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--color-surface-raised)",
+          foreground: "var(--color-text)",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--color-accent)",
+          foreground: "var(--color-background)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--color-surface-raised)",
+          foreground: "var(--color-text)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--color-background-soft)",
+          foreground: "var(--color-text-muted)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--color-error)",
+          foreground: "var(--color-background)",
         },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        border: "var(--color-border)",
+        input: "var(--color-border)",
+        ring: "var(--color-accent)",
         chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
+          "1": "var(--color-accent)",
+          "2": "var(--color-accent-soft)",
+          "3": "var(--color-success)",
+          "4": "var(--color-warning)",
+          "5": "var(--color-error)",
         },
       },
       borderRadius: {
